@@ -1,6 +1,7 @@
-using Sirenix.OdinInspector;
+using Sirenix.OdinInspector;using UnityEditor;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Game/Item Data", fileName = "Item")]
 public class ItemData : ScriptableObject
 {
     private string m_name = "";
