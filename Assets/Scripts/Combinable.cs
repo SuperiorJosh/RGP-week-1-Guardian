@@ -27,8 +27,7 @@ public class Combinable : MonoBehaviour
         
         // Remove listener
         interactable.ItemInteraction.RemoveListener(CombineObject);
-        
-        //Inventory.Instance.AddItem(itemData);
-        Destroy(gameObject);
+
+        // Add functionality here.
     }
 }
