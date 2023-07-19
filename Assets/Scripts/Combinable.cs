@@ -25,9 +25,11 @@ public class Combinable : MonoBehaviour
             return;
         }
         
-        // Remove listener
-        interactable.ItemInteraction.RemoveListener(CombineObject);
-
         // Add functionality here.
+        if(Inventory.Instance.ValidCombination(itemData, _heldItemData))
+        {
+            // Remove listener
+            interactable.ItemInteraction.RemoveListener(CombineObject);
+        }
     }
 }
