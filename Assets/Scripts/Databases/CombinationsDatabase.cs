@@ -14,7 +14,7 @@ public class CombinationsDatabase : IDatabase<CombinationData>
             m_db.Add(asset.name, asset);
         }
         
-        Debug.Log($"Loaded <b>{assets.Count}</b> Items");
+        Debug.Log($"Loaded <b>{assets.Count}</b> Item Combinations");
     }
 
     public CombinationData FindFromItems(ItemData item1, ItemData item2)
