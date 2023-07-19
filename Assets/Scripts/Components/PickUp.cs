@@ -5,12 +5,11 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     Interactable interactable;
-    ItemData itemData;
+    [SerializeField]ItemData itemData;
     
     void Awake()
     {
         interactable = GetComponent<Interactable>();
-        //itemData = GetComponent<ItemData>();
     }
 
     void Start()
@@ -28,7 +27,7 @@ public class PickUp : MonoBehaviour
         // Remove listener
         interactable.ItemInteraction.RemoveListener(PickUpObject);
         
-        //Inventory.Instance.AddItem(itemData);
+        Inventory.Instance.AddItem(itemData);
         Destroy(gameObject);
     }
 }
