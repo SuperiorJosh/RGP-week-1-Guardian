@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour
     {
         // Instantiate dialogue box and get reference to text component
         GameObject dialogueBox = Instantiate(prefab);
-        TMP_Text textBox = dialogueBox.GetComponent<TMP_Text>();
+        TMP_Text textBox = dialogueBox.GetComponentInChildren<TMP_Text>();
 
         textBox.text = dialogueText;
     }
