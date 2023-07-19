@@ -4,10 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Item Data", fileName = "Item")]
 public class ItemData : ScriptableObject
 {
-    private string m_name = "";
-    private string m_description = "";
-    private Sprite m_sprite;
-    private GameObject m_prefab;
+    [SerializeField] private string m_name = "";
+    [SerializeField] private string m_description = "";
+    [SerializeField] private Sprite m_sprite;
+    [SerializeField] private GameObject m_prefab;
     
     public string Name => m_name;
     
