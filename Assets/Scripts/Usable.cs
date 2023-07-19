@@ -17,7 +17,7 @@ public class Usable : MonoBehaviour
         interactable.ItemInteraction.AddListener(UseObject);
     }
 
-    void UseObject()
+    void UseObject(ItemData _heldItemData)
     {
         // Remove listener
         interactable.ItemInteraction.RemoveListener(UseObject);
