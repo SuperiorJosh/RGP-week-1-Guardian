@@ -22,6 +22,10 @@ public class PlayerInput : MonoBehaviour
                 {
                     hit.collider.GetComponent<RoomTransition>().ChangeRoom();
                 }
+                else if (hit.collider.GetComponent<Interactable>())
+                {
+
+                }
             }
         }
     }
