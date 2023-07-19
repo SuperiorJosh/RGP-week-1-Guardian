@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GhostBehaviour : MonoBehaviour
 {
+    // Variables
+    public bool CanTalk = false;
+
     // References
     private SpriteRenderer spriteRenderer;
     private PlayerData playerData;
@@ -30,5 +33,10 @@ public class GhostBehaviour : MonoBehaviour
     public void SetAlpha(float newAlpha)
     {
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, newAlpha);
+
+        if (newAlpha == 1.0f)
+        {
+            CanTalk = true;
+        }
     }
 }
