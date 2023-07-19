@@ -8,6 +8,8 @@ public class PlayerData : MonoBehaviour
     // Player variables
     private bool ghostVisionActive = false;
 
+    public ItemData itemData { get; set; }
+
     // Unity event
     public UnityEvent<bool> GhostVisionToggle;
 

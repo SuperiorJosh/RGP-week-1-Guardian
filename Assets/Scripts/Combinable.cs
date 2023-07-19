@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class Combinable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Interactable interactable;
+    ItemData itemData;
+    
+    void Awake()
     {
-        
+        interactable = GetComponent<Interactable>();
+        //itemData = GetComponent<ItemData>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
+        interactable.ItemInteraction.AddListener(CombineObject);
+    }
+
+    void CombineObject(ItemData _heldItemData)
+    {
+        if(_heldItemData == null)
+        {
+            return;
+        }
         
+        // Remove listener
+        interactable.ItemInteraction.RemoveListener(CombineObject);
+        
+        //Inventory.Instance.AddItem(itemData);
+        Destroy(gameObject);
     }
 }

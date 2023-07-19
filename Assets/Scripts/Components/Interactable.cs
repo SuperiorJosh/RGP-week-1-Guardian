@@ -6,10 +6,10 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     // Unity Events
-    public UnityEvent ItemInteraction;
+    public UnityEvent<ItemData> ItemInteraction;
 
-    public void Interact()
+    public void Interact(ItemData _heldItemData)
     {
-        ItemInteraction?.Invoke();
+        ItemInteraction?.Invoke(_heldItemData);
     }
 }

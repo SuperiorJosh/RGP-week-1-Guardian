@@ -18,8 +18,13 @@ public class PickUp : MonoBehaviour
         interactable.ItemInteraction.AddListener(PickUpObject);
     }
 
-    void PickUpObject()
+    void PickUpObject(ItemData _heldItemData)
     {
+        if(_heldItemData != null)
+        {
+            return;
+        }
+        
         // Remove listener
         interactable.ItemInteraction.RemoveListener(PickUpObject);
         
