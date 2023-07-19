@@ -10,7 +10,7 @@ public class PickUp : MonoBehaviour
     void Awake()
     {
         interactable = GetComponent<Interactable>();
-        itemData = GetComponent<ItemData>();
+        //itemData = GetComponent<ItemData>();
     }
 
     void Start()
@@ -20,7 +20,10 @@ public class PickUp : MonoBehaviour
 
     void PickUpObject()
     {
-        Inventory.Instance.AddItem(itemData);
+        // Remove listener
+        interactable.ItemInteraction.RemoveListener(PickUpObject);
+        
+        //Inventory.Instance.AddItem(itemData);
         Destroy(gameObject);
     }
 }

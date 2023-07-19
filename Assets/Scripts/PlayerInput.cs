@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
                 }
                 else if (hit.collider.GetComponent<Interactable>())
                 {
-
+                    hit.collider.GetComponent<Interactable>().Interact();
                 }
             }
         }
