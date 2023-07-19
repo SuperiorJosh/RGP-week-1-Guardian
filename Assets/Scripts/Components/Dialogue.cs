@@ -18,7 +18,7 @@ public class Dialogue : MonoBehaviour
         interactableComponent.ItemInteraction.AddListener(OnInteract);
     }
 
-    private void OnInteract()
+    private void OnInteract(ItemData _heldItemData)
     {
         // Instantiate dialogue box and get reference to text component
         GameObject dialogueBox = Instantiate(prefab);
