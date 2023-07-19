@@ -6,11 +6,13 @@ public class ItemData : ScriptableObject
 {
     [SerializeField] private string m_name = "";
     [SerializeField] private string m_description = "";
-    [SerializeField] private Sprite m_sprite;
     [SerializeField] private GameObject m_prefab;
     
-    public string Name => m_name;
+    [SerializeField] private Sprite m_inventoryIcon;
     
+    public string Name => m_name;
+    public string Description => m_description;
+    public Sprite InventoryIcon => m_inventoryIcon;
     public GameObject ItemPrefab => m_prefab;
     
     // for instances - want to ensure we're not messing with the original

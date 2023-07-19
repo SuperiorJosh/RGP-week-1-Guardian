@@ -27,6 +27,16 @@ public class UIInventory : MonoBehaviour
     {
         var icon = m_icons.FirstOrDefault();
         m_activeIcons.Add(icon);
+        if (icon == null) return;
+        
+        icon.Setup(itemData);
+        icon.OnClicked.AddListener(OnIconClicked);
+    }
+
+    private void OnIconClicked(UIInventoryIcon icon)
+    {
+        Debug.Log($"Item Clicked: {icon.ItemData.Name}");
+        // show popup window
     }
 
     private void OnInventoryItemRemoved()

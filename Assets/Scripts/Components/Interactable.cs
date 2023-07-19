@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     // Unity Events
+    [HideInInspector]
     public UnityEvent<ItemData> ItemInteraction;
 
     public void Interact(ItemData _heldItemData)

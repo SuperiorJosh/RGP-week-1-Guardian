@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     Interactable interactable;
-    [SerializeField]ItemData itemData;
+    [SerializeField] ItemData itemData;
     
     void Awake()
     {
