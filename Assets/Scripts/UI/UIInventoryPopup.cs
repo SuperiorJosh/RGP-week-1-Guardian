@@ -8,8 +8,8 @@ public class UIInventoryPopup : MonoBehaviour
 {
     [SerializeField] private Button m_useBtn;
     [SerializeField] private Button m_combineBtn;
-    private UIInventoryIcon m_iconRef;
-    private UIInventoryIcon m_combineTarget;
+    private UIInventoryIcon m_activeIcon;
+    private UIInventoryIcon m_combineIcon;
     private bool m_active = false;
     public bool Active => m_active;
     
@@ -21,40 +21,70 @@ public class UIInventoryPopup : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Show(UIInventoryIcon active)
+    public void Show(UIInventoryIcon icon)
     {
-        
-        m_iconRef = active;
-        m_active = true;
-        var iconTrans = active.transform as RectTransform;
+        if (!m_active)
+        {
+            m_activeIcon = icon;
+            m_active = true;
+            m_combineBtn.interactable = false;
+            gameObject.SetActive(m_activeIcon);
+            UpdatePosition(m_activeIcon);
+        }
+    }
+
+    public void UpdatePosition(UIInventoryIcon target)
+    {
+        var iconTrans = target.transform as RectTransform;
         var canvasRoot = GetComponentInParent<Canvas>();
         var pos = RectTransformUtility.CalculateRelativeRectTransformBounds(canvasRoot.transform, iconTrans).center;
         var trans = transform as RectTransform;
         trans.anchoredPosition = new Vector3(pos.x, trans.anchoredPosition.y, 0);
-        m_combineBtn.interactable = false;
-        gameObject.SetActive(true);
     }
-
-    public void SetCombineTarget(UIInventoryIcon target)
-    {
-        m_combineBtn.interactable = target != null;
-        m_combineTarget = target;
-    }
-
+    
     public void Hide()
     {
         gameObject.SetActive(false);
         m_active = false;
-        m_iconRef = null;
+        m_activeIcon = null;
+        m_combineIcon = null;
     }
 
     private void OnCombineButtonClicked()
     {
-        Debug.Log($"Combine {m_iconRef.ItemData.Name} and {m_combineTarget.ItemData.Name}");
+        var itemOne = m_activeIcon.ItemData;
+        var itemTwo = m_combineIcon.ItemData;
+        var combined = Inventory.Instance.CombineItems(itemOne, itemTwo);
+        if (combined == null) return;
+        Debug.Log($"Combined {itemOne.Name} and {itemTwo.Name}");
+        Hide();
     }
 
     private void OnUseButtonClicked()
     {
-        Debug.Log($"Used {m_iconRef.ItemData.Name}");
+        Debug.Log($"Used {m_activeIcon.ItemData.Name}");
+    }
+
+    public void SetNewTarget(UIInventoryIcon icon)
+    {
+        // already shown, if active icon selected
+        if (icon == m_activeIcon)
+        {
+            // if combine icon, replace combine icon with active
+            if (m_combineIcon)
+            {
+                m_activeIcon = m_combineIcon;
+                m_combineIcon = null;
+                m_combineBtn.interactable = false;
+                UpdatePosition(m_activeIcon);
+                return;
+            }
+            m_activeIcon = null;
+            Hide();
+            return;
+        }
+
+        m_combineIcon = icon == m_combineIcon ? null : icon;
+        m_combineBtn.interactable = m_combineIcon != null;
     }
 }

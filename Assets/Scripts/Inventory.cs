@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,6 +29,11 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemData item)
     {
+        if (item == null)
+        {
+            Debug.Log("Attempting to add NULL item");
+            return;
+        }
         // TODO: Refactor into some form of Item Database to generate instances
         var itemInstance = ItemData.CreateInstance(item);
         m_items.Add(itemInstance);
@@ -38,16 +44,33 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(ItemData itemRef)
     {
         var item = itemRef.IsInstance ? itemRef.OriginalRef : itemRef;
-        
-        if (m_items.Contains(item))
+
+        ItemData foundItem = null; 
+        foreach (var itemData in m_items.Where(itemData => itemData.IsInstanceOf(item)))
         {
-            m_items.Remove(item);
-            ItemRemoved?.Invoke(item);
+            foundItem = itemData;
+            ItemRemoved?.Invoke(foundItem);
+            break;
         }
+
+        if (foundItem != null)
+            m_items.Remove(foundItem);
     }
 
-    public bool ValidCombination(ItemData item1, ItemData item2)
+    public bool ValidateCombination(ItemData itemOne, ItemData itemTwo)
     {
-        return true;
+        var combination = Databases.Instance.Combinations.FindFromItems(itemOne, itemTwo);
+        return combination != null;
+    }
+    
+    public ItemData CombineItems(ItemData itemOne, ItemData itemTwo)
+    {
+        var combination = Databases.Instance.Combinations.FindFromItems(itemOne, itemTwo);
+        if (combination == null) return null;
+        RemoveItem(itemOne);
+        RemoveItem(itemTwo);
+        AddItem(combination.Output);
+        return combination.Output;
+
     }
 }

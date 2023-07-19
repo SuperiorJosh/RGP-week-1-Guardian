@@ -26,7 +26,7 @@ public class Combinable : MonoBehaviour
         }
         
         // Add functionality here.
-        if(Inventory.Instance.ValidCombination(itemData, _heldItemData))
+        if(Inventory.Instance.ValidateCombination(itemData, _heldItemData))
         {
             // Remove listener
             interactable.ItemInteraction.RemoveListener(CombineObject);
