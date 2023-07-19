@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07a5e7575ae4f06ad739f12cb89abe0, type: 3}
+  m_Name: CombRemoteBattery
+  m_EditorClassIdentifier: 
+  m_inputItem1: {fileID: 11400000, guid: 34372aa7a4e849649b6d6c9da9e9b4db, type: 2}
+  m_inputItem2: {fileID: 11400000, guid: 663bb409e3ed5214fa373c45b074fbcf, type: 2}
+  m_outputItem: {fileID: 11400000, guid: 297d88e5d60b6924ca7fc71121f02c12, type: 2}
