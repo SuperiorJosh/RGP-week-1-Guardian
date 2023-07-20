@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
 
     public UnityEvent<ItemData> ItemAdded;
     public UnityEvent<ItemData> ItemRemoved;
+    public UnityEvent<CombinationData> ItemsCombined; 
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(ItemData item)
+    public void AddItem(ItemData item, bool fireEvent = true)
     {
         if (item == null)
         {
@@ -38,7 +39,8 @@ public class Inventory : MonoBehaviour
         var itemInstance = ItemData.CreateInstance(item);
         m_items.Add(itemInstance);
         
-        ItemAdded?.Invoke(itemInstance);
+        if (fireEvent)
+            ItemAdded?.Invoke(itemInstance);
     }
 
     public void RemoveItem(ItemData itemRef)
@@ -63,14 +65,15 @@ public class Inventory : MonoBehaviour
         return combination != null;
     }
     
-    public ItemData CombineItems(ItemData itemOne, ItemData itemTwo)
+    public CombinationData CombineItems(ItemData itemOne, ItemData itemTwo)
     {
         var combination = Databases.Instance.Combinations.FindFromItems(itemOne, itemTwo);
         if (combination == null) return null;
         RemoveItem(itemOne);
         RemoveItem(itemTwo);
-        AddItem(combination.Output);
-        return combination.Output;
+        AddItem(combination.Output, false);
+        ItemsCombined?.Invoke(combination);
+        return combination;
 
     }
 }

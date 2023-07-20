@@ -17,30 +17,41 @@ public class UIInventoryIcon : MonoBehaviour, IPointerClickHandler, IPointerEnte
     private ItemData m_itemData;
     public ItemData ItemData => m_itemData;
 
+    private CanvasGroup m_canvasGroup;
+
     [FormerlySerializedAs("m_onClicked")] public UnityEvent<UIInventoryIcon> OnClicked;
+
+    private void Awake()
+    {
+        m_canvasGroup = GetComponent<CanvasGroup>();
+        m_canvasGroup.alpha = 0;
+        m_canvasGroup.blocksRaycasts = false;
+    }
 
     private void Start()
     {
-        gameObject.SetActive(false);
-        m_iconBgImage.DOFade(0f, 0f);
     }
 
     public void Setup(ItemData item)
     {
         m_itemData = item;
         m_iconImage.sprite = item.InventoryIcon;
-        gameObject.SetActive(true);
+        m_canvasGroup.alpha = 1f;
+        m_active = false;
+        m_iconBgImage.DOFade(0f, 0f);
+        m_canvasGroup.blocksRaycasts = true;
     }
 
     private void OnDisable()
     {
-        m_active = false;
+        
     }
 
     public void Reset()
     {
         m_active = false;
-        gameObject.SetActive(false);
+        m_canvasGroup.alpha = 0f;
+        m_canvasGroup.blocksRaycasts = false;
     }
 
     public void OnPointerClick(PointerEventData eventData)

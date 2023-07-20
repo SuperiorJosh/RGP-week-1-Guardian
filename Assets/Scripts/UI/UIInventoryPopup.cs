@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIInventoryPopup : MonoBehaviour
@@ -12,6 +13,8 @@ public class UIInventoryPopup : MonoBehaviour
     private UIInventoryIcon m_combineIcon;
     private bool m_active = false;
     public bool Active => m_active;
+
+    private UnityAction<UIInventoryIcon> m_onIconClickCallback;
     
     private void Start()
     {
@@ -21,10 +24,11 @@ public class UIInventoryPopup : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Show(UIInventoryIcon icon)
+    public void Show(UIInventoryIcon icon, UnityAction<UIInventoryIcon> onIconClicked)
     {
         if (!m_active)
         {
+            m_onIconClickCallback = onIconClicked;
             m_activeIcon = icon;
             m_active = true;
             m_combineBtn.interactable = false;
@@ -57,6 +61,8 @@ public class UIInventoryPopup : MonoBehaviour
         var combined = Inventory.Instance.CombineItems(itemOne, itemTwo);
         if (combined == null) return;
         Debug.Log($"Combined {itemOne.Name} and {itemTwo.Name}");
+        m_activeIcon.Setup(combined.Output);
+        m_activeIcon.OnClicked.AddListener(m_onIconClickCallback);
         Hide();
     }
 

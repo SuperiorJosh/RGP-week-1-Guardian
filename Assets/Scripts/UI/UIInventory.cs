@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {   
     //
-    private List<UIInventoryIcon> m_icons = new();
+    private Dictionary<int, UIInventoryIcon> m_icons = new();
     private List<UIInventoryIcon> m_inactiveIcons = new();
     private List<UIInventoryIcon> m_activeIcons = new();
 
@@ -19,10 +19,12 @@ public class UIInventory : MonoBehaviour
 
     private void Awake()
     {
+        var count = 0;
         foreach (var icon in GetComponentsInChildren<UIInventoryIcon>())
         {
-            m_icons.Add(icon);
+            m_icons.Add(count, icon);
             m_inactiveIcons.Add(icon);
+            count++;
         }
     }
 
@@ -49,7 +51,7 @@ public class UIInventory : MonoBehaviour
         // show popup window
         if (!m_popupWindow.Active)
         {
-            m_popupWindow.Show(icon);
+            m_popupWindow.Show(icon, OnIconClicked);
         }
         else
         {
