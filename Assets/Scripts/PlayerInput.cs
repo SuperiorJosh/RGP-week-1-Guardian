@@ -18,7 +18,19 @@ public class PlayerInput : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.collider.GetComponent<RoomTransition>())
+                if(InteractionManager.Instance.itemWasClicked)
+                {
+                    if(hit.collider.GetComponent<Usable>())
+                    {
+                        // Usable item. Trigger effect.
+                        hit.collider.GetComponent<Usable>().UseItem(InteractionManager.Instance.clickedItemData);
+                    }
+                    else{
+                        // Clicked item was not usable.
+                    }
+                    InteractionManager.Instance.itemWasClicked = false;
+                }
+                else if (hit.collider.GetComponent<RoomTransition>())
                 {
                     hit.collider.GetComponent<RoomTransition>().ChangeRoom();
                 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18027343, g: 0.22570238, b: 0.30691633, a: 1}
+  m_IndirectSpecularColor: {r: 0.18027313, g: 0.22570199, b: 0.30691558, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -868,6 +868,7 @@ GameObject:
   - component: {fileID: 330585548}
   - component: {fileID: 330585549}
   - component: {fileID: 330585550}
+  - component: {fileID: 330585551}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1041,6 +1042,20 @@ MonoBehaviour:
   ItemsCombined:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &330585551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9c1b20d85af6a46b462a2d06fdeb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemWasClicked: 0
+  clickedItemData: {fileID: 0}
 --- !u!1 &367787748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1174,7 @@ GameObject:
   - component: {fileID: 540515346}
   - component: {fileID: 540515350}
   - component: {fileID: 540515351}
+  - component: {fileID: 540515352}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -1284,6 +1300,23 @@ MonoBehaviour:
   dialogueTimer: 3
   UICanvas: {fileID: 367787748}
   dialoguePosition: {x: -550, y: 300, z: 0}
+--- !u!114 &540515352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540515345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666fc32ffae23dd42b57863e1011f609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresItem: 1
+  requiredItemData: {fileID: 11400000, guid: 297d88e5d60b6924ca7fc71121f02c12, type: 2}
+  usableEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &624974841
 GameObject:
   m_ObjectHideFlags: 0

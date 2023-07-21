@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Usable : MonoBehaviour
 {
-    Interactable interactable;
-    ItemData itemData;
+    //Interactable interactable;    
+
+    [SerializeField] bool requiresItem;
+    [SerializeField] ItemData requiredItemData;
     
-    void Awake()
-    {
-        interactable = GetComponent<Interactable>();
-    }
+    public UnityEvent<ItemData> usableEvent; // Unity event for when usable is successful.
 
-    void Start()
+    public void UseItem(ItemData _clickedItem)
     {
-        interactable.ItemInteraction.AddListener(UseObject);
-    }
-
-    void UseObject(ItemData _heldItemData)
-    {
-        // Remove listener
-        interactable.ItemInteraction.RemoveListener(UseObject);
-        
-        // Add functionality here.
-
-        Destroy(gameObject);
+        if(requiresItem && requiredItemData != null)
+        {
+            if(_clickedItem == requiredItemData)
+            {
+                Debug.Log("Correct item used");
+            }
+            else{
+                Debug.Log("Wrong item used");
+            }
+        }
+        else{
+            // TODO: Add any necessary logic for cases where an item is not required.
+        }        
     }
 }
