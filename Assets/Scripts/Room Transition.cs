@@ -7,6 +7,7 @@ public class RoomTransition : MonoBehaviour
     // Variables
     [SerializeField] private Vector3 newPosition;
     [SerializeField] private Quaternion newRotation;
+    [SerializeField] GameStepEvent gameStep;
 
     // References
     private GameObject mainCamera;
@@ -21,6 +22,12 @@ public class RoomTransition : MonoBehaviour
     // Change Rooms
     public void ChangeRoom()
     {
+        // Check game state here, is it valid to swap rooms yet?
+        if(gameStep.CurrentState != GameStepEventState.Completed)
+        {
+            return;
+        }
+
         mainCamera.transform.position = newPosition;
         mainCamera.transform.rotation = newRotation;
     }
