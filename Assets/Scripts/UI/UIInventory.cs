@@ -58,7 +58,7 @@ public class UIInventory : MonoBehaviour
             m_popupWindow.SetNewTarget(icon);            
         }
         //InteractionManager.Instance.itemWasClicked = true;
-        //InteractionManager.Instance.clickedItemData = icon.ItemData;
+        InteractionManager.Instance.clickedItemData = icon.ItemData;
     }
 
     private void OnInventoryItemRemoved(ItemData data)

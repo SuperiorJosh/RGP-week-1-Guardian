@@ -7,7 +7,7 @@ public class InteractionManager : MonoBehaviour
     public static InteractionManager Instance { get; private set; }
     public bool itemWasClicked = false;
     public ItemData clickedItemData;
-    
+        
     private void Awake()
     {
         if (Instance != null && Instance != this)
