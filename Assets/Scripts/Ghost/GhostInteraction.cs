@@ -13,6 +13,7 @@ public class GhostInteraction : MonoBehaviour
     [SerializeField] private GameObject UICanvas;
     [SerializeField] private Vector3 dialoguePosition;
     private GameObject dialogueBox = null;
+    private string dialogueText = "I'm not unlocking the door!";
 
     // Cutscene dialogue
     [SerializeField] private List<string> dadDialogue;
@@ -47,17 +48,19 @@ public class GhostInteraction : MonoBehaviour
     {
         if (entertainEmmaGameStep.CurrentState == GameStepEventState.Completed && !familyDialogueHasPlayed)
         {
-            WorldDialogue(dadDialogue[0]);
+            dialogueText = "Wow I love this show! Sorry for being mean, I'll unlock the door";
+            WorldDialogue();
             familyDialogueHasPlayed = true;
             CompleteGameStep(unlockDoorGameStep);
+            dialogueText = "Do you want to play?";
         }
         else
         {
-            WorldDialogue(kitchenDialogue);
+            WorldDialogue();
         }
     }
 
-    private void WorldDialogue(string dialogueText)
+    private void WorldDialogue()
     {
         if (dialogueBox == null)
         {
