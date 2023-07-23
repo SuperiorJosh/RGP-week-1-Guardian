@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18027343, g: 0.22570238, b: 0.30691633, a: 1}
+  m_IndirectSpecularColor: {r: 0.18027313, g: 0.22570199, b: 0.30691558, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newPosition: {x: 20.65, y: 11.45, z: 25.04}
   newRotation: {x: -0.037462797, y: 0.9478428, z: -0.15218996, w: -0.2775406}
-  gameStep: {fileID: 0}
+  gameStep: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4, type: 2}
 --- !u!65 &860971934
 BoxCollider:
   m_ObjectHideFlags: 0
