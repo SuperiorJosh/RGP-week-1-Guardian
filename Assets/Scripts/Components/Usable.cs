@@ -19,6 +19,8 @@ public class Usable : MonoBehaviour
             if(_clickedItem == requiredItemData)
             {
                 Debug.Log("Correct item used");
+                // Invoke event attached to TV?
+                usableEvent?.Invoke(_clickedItem);
             }
             else{
                 Debug.Log("Wrong item used");
