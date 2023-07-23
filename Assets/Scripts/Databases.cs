@@ -9,9 +9,11 @@ public class Databases : SerializedMonoBehaviour
 
     [OdinSerialize] private ItemDatabase m_items;
     [OdinSerialize] private CombinationsDatabase m_combinations;
+    [OdinSerialize] private GameStepDatabase m_stepEvents;
 
     public ItemDatabase Items => m_items;
     public CombinationsDatabase Combinations => m_combinations;
+    public GameStepDatabase GameStepEvents => m_stepEvents;
     
     private void Awake()
     {
@@ -25,5 +27,6 @@ public class Databases : SerializedMonoBehaviour
         }
         m_items.Init();
         m_combinations.Init();
+        m_stepEvents.Init();
     }
 }

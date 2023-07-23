@@ -44,4 +44,14 @@ public class ItemDatabase : IDatabase<ItemData>
             
         }
     }
+
+    public IEnumerable<ItemData> GetAll()
+    {
+        return null;
+    }
+
+    public ItemData GetSingle()
+    {
+        return null;
+    }
 }

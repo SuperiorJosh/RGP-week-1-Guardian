@@ -37,4 +37,14 @@ public class CombinationsDatabase : IDatabase<CombinationData>
     {
         
     }
+
+    public IEnumerable<CombinationData> GetAll()
+    {
+        return null;
+    }
+
+    public CombinationData GetSingle()
+    {
+        return null;
+    }
 }
