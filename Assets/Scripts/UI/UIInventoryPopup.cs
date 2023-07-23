@@ -69,6 +69,9 @@ public class UIInventoryPopup : MonoBehaviour
     private void OnUseButtonClicked()
     {
         Debug.Log($"Used {m_activeIcon.ItemData.Name}");
+
+        InteractionManager.Instance.itemWasClicked = true;
+        InteractionManager.Instance.clickedItemData = m_activeIcon.ItemData;
     }
 
     public void SetNewTarget(UIInventoryIcon icon)
