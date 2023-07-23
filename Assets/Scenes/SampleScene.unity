@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419ea93d90eaaef4f84f992197d71b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStep: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4, type: 2}
+  gameStep: {fileID: 11400000, guid: c5c3d9acee01c314095513dcd00f46cc, type: 2}
 --- !u!1 &624974841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2042,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4327035432206495279, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: UICanvas
+      value: 
+      objectReference: {fileID: 367787748}
+    - target: {fileID: 4327035432206495279, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: dialogueTimer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6222787422584327314, guid: 5abb4defa7a4af7478a99aea818b2d40,
         type: 3}
       propertyPath: m_Name
@@ -2110,15 +2120,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6222787422584327314, guid: 5abb4defa7a4af7478a99aea818b2d40,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2126746275}
-    - targetCorrespondingSourceObject: {fileID: 6222787422584327314, guid: 5abb4defa7a4af7478a99aea818b2d40,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2126746276}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abb4defa7a4af7478a99aea818b2d40, type: 3}
 --- !u!1 &2068772152
 GameObject:
@@ -2254,44 +2256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068772152}
   m_CullTransparentMesh: 1
---- !u!1 &2126746270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6222787422584327314, guid: 5abb4defa7a4af7478a99aea818b2d40,
-    type: 3}
-  m_PrefabInstance: {fileID: 1776375012}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2126746275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126746270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 010715b668c8bde4aa85c2b88f66a7e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: I need a stronger connection
-  prefab: {fileID: 5983291749530330941, guid: 6d8634d459d2bc14a8dd9a1dca7ec9ea, type: 3}
-  dialogueTimer: 3
-  UICanvas: {fileID: 367787748}
-  dialoguePosition: {x: 130, y: 225, z: 0}
---- !u!114 &2126746276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126746270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3477f123798b25f4cb4badfec05c6f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemInteraction:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2135510373
 GameObject:
   m_ObjectHideFlags: 0
