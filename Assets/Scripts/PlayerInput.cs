@@ -14,31 +14,37 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if(DialogueManager.Instance.IsUIShowing())
             {
-                if(InteractionManager.Instance.useButtonClicked)
-                {
-                    if(hit.collider.GetComponent<Usable>())
-                    {
-                        // Usable item. Trigger effect.
-                        hit.collider.GetComponent<Usable>().UseItem(InteractionManager.Instance.clickedItemData);
-                    }
-                    else{
-                        // Clicked item was not usable.
-                    }
-                    InteractionManager.Instance.useButtonClicked = false;
-                }
-                else if (hit.collider.GetComponent<RoomTransition>())
-                {
-                    hit.collider.GetComponent<RoomTransition>().ChangeRoom();
-                }
-                else if (hit.collider.GetComponent<Interactable>())
-                {
-                    hit.collider.GetComponent<Interactable>().Interact(gameObject.GetComponent<PlayerData>().itemData);
-                }
+                DialogueManager.Instance.NextLine();
             }
+            else{
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out RaycastHit hit))
+                {
+                    if(InteractionManager.Instance.useButtonClicked)
+                    {
+                        if(hit.collider.GetComponent<Usable>())
+                        {
+                            // Usable item. Trigger effect.
+                            hit.collider.GetComponent<Usable>().UseItem(InteractionManager.Instance.clickedItemData);
+                        }
+                        else{
+                            // Clicked item was not usable.
+                        }
+                        InteractionManager.Instance.useButtonClicked = false;
+                    }
+                    else if (hit.collider.GetComponent<RoomTransition>())
+                    {
+                        hit.collider.GetComponent<RoomTransition>().ChangeRoom();
+                    }
+                    else if (hit.collider.GetComponent<Interactable>())
+                    {
+                        hit.collider.GetComponent<Interactable>().Interact(gameObject.GetComponent<PlayerData>().itemData);
+                    }
+                }
+            } 
         }
     }
 }
