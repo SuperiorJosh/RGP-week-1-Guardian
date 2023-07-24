@@ -16,7 +16,7 @@ public class Usable : MonoBehaviour
     {
         if(requiresItem && requiredItemData != null)
         {
-            if(_clickedItem == requiredItemData  && InteractionManager.Instance.itemWasClicked)
+            if(_clickedItem == requiredItemData  && InteractionManager.Instance.useButtonClicked)
             {
                 Debug.Log("Correct item used");
                 // Invoke event attached to TV?

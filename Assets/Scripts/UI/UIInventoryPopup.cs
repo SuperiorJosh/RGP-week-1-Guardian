@@ -70,7 +70,7 @@ public class UIInventoryPopup : MonoBehaviour
     {
         Debug.Log($"Used {m_activeIcon.ItemData.Name}");
 
-        InteractionManager.Instance.itemWasClicked = true;
+        InteractionManager.Instance.useButtonClicked = true;
         //InteractionManager.Instance.clickedItemData = m_activeIcon.ItemData;
     }
 

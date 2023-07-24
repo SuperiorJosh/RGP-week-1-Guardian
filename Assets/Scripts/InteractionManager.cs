@@ -5,7 +5,8 @@ using UnityEngine;
 public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager Instance { get; private set; }
-    public bool itemWasClicked = false;
+    //public bool itemWasClicked = false;
+    public bool useButtonClicked = false;
     public ItemData clickedItemData;
         
     private void Awake()

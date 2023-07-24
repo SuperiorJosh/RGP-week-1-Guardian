@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if(InteractionManager.Instance.itemWasClicked)
+                if(InteractionManager.Instance.useButtonClicked)
                 {
                     if(hit.collider.GetComponent<Usable>())
                     {
@@ -28,7 +28,7 @@ public class PlayerInput : MonoBehaviour
                     else{
                         // Clicked item was not usable.
                     }
-                    InteractionManager.Instance.itemWasClicked = false;
+                    InteractionManager.Instance.useButtonClicked = false;
                 }
                 else if (hit.collider.GetComponent<RoomTransition>())
                 {
