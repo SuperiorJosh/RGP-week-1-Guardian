@@ -8,26 +8,59 @@ public class Usable : MonoBehaviour
     //Interactable interactable;    
 
     [SerializeField] bool requiresItem;
-    [SerializeField] ItemData requiredItemData;
-    
-    public UnityEvent<ItemData> usableEvent; // Unity event for when usable is successful.
+    //[SerializeField] ItemData requiredItemData;
+    //public UnityEvent<ItemData> usableEvent; // Unity event for when usable is successful.
+
+    [System.Serializable]
+    public struct ItemEventPair
+    {
+        public ItemData requiredItem;
+        public UnityEvent<ItemData> usableEvent;
+    }
+    public List<ItemEventPair> requiredItemDataList;
 
     public void UseItem(ItemData _clickedItem)
     {
-        if(requiresItem && requiredItemData != null)
+        if(!InteractionManager.Instance.useButtonClicked)
         {
-            if(_clickedItem == requiredItemData  && InteractionManager.Instance.useButtonClicked)
+            // Don't do anything unless use button clicked.
+            return;
+        }
+        
+        if(requiresItem)
+        {
+            foreach (ItemEventPair itemEventPair in requiredItemDataList)
             {
-                Debug.Log("Correct item used");
-                // Invoke event attached to TV?
-                usableEvent?.Invoke(_clickedItem);
+                if(_clickedItem == itemEventPair.requiredItem)
+                {
+                    Debug.Log("Correct item used");
+                    (itemEventPair.usableEvent)?.Invoke(_clickedItem);
+                    return;
+                }
             }
-            else{
-                Debug.Log("Wrong item used");
-            }
+            Debug.Log("Item not usable on target");
         }
         else{
             // TODO: Add any necessary logic for cases where an item is not required.
-        }        
+        }
+
+        // if(requiresItem && requiredItemData != null)
+        // {
+            
+            
+            
+        //     if(_clickedItem == requiredItemData  && InteractionManager.Instance.useButtonClicked)
+        //     {
+        //         Debug.Log("Correct item used");
+        //         // Invoke event attached to TV?
+        //         usableEvent?.Invoke(_clickedItem);
+        //     }
+        //     else{
+        //         Debug.Log("Wrong item used");
+        //     }
+        // }
+        // else{
+        //     // TODO: Add any necessary logic for cases where an item is not required.
+        // }        
     }
 }
