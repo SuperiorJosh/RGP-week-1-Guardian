@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class InteractionManager : MonoBehaviour
     //public bool itemWasClicked = false;
     public bool useButtonClicked = false;
     public ItemData clickedItemData;
-        
+
+    public UnityEvent<Transform> InteractionTargetChanged;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -20,5 +23,10 @@ public class InteractionManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    public void SetInteractionTarget(Transform target)
+    {
+        InteractionTargetChanged?.Invoke(target);
     }
 }
