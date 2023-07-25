@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf167b622b63e54eb5a5e722e0997d7, type: 3}
+  m_Name: Family Photo + tenant Dialogue
+  m_EditorClassIdentifier: 
+  speakersSprite: {fileID: 21300000, guid: f01a9c7505ff151478ad35da81a57009, type: 3}
+  dialogueLines:
+  - 'You: Could you have a look at this?'
+  - 'Client: Oh you fixed it...'
+  - 'You: It seems like there''s a part missing. Do you know where it could be?'
+  - 'Client: Do you mean this?'
+  - 'Client: It''s my daughter... I took it because I didn''t want the soul to tear
+    her face in the photo'
+  - 'You: I see, could I have a look?'
+  - 'Client: Sure... I guess it''s okay'
