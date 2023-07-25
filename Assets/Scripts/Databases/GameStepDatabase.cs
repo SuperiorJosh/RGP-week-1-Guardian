@@ -13,7 +13,7 @@ public class GameStepDatabase : IDatabase<GameStepEvent>
         {
             m_db.Add(asset);
         }
-        Debug.Log($"Loaded <b>{assets.Count}</b> Items");
+        Debug.Log($"Loaded <b>{assets.Count}</b> Game Steps");
     }
 
     public void GetInstance(GameStepEvent data)

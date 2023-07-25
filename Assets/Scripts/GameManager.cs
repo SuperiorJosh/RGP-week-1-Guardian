@@ -27,14 +27,25 @@ public class GameManager : SerializedMonoBehaviour
         foreach (var stepEvent in events)
         {
             stepEvent.StepEventChanged.AddListener(OnGameStepChanged);
+            m_gameSteps.Add(stepEvent, stepEvent.CurrentState);
         }
     }
 
     private void OnGameStepChanged(GameStepEvent stepEvent)
     {
-        if (m_gameSteps.ContainsKey(stepEvent))
+        if (m_gameSteps.TryGetValue(stepEvent, out var step))
         {
-            
+            step = stepEvent.CurrentState;
         }
+    }
+
+    public GameStepEventState? GetStepState(GameStepEvent stepEvent)
+    {
+        if (m_gameSteps.TryGetValue(stepEvent, out var step))
+        {
+            return step;
+        }
+
+        return null;
     }
 }
