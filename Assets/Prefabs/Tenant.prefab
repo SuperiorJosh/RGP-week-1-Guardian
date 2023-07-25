@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5760827748510229607}
   - component: {fileID: 8684308887568082081}
   - component: {fileID: 1896523146499107059}
+  - component: {fileID: 3443416381273033835}
   m_Layer: 0
   m_Name: Tenant
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 7255079733635530399}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2987975040495799064
 MonoBehaviour:
@@ -123,6 +124,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c178c4c45d1a2274896ddb533b7015da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3443416381273033835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175543212744088182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82234f212f90a0744b2076f853d7d59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5983291749530330941, guid: 6d8634d459d2bc14a8dd9a1dca7ec9ea, type: 3}
+  dialogueTimer: 2
+  UICanvas: {fileID: 0}
+  dialoguePosition: {x: 0, y: 0, z: 0}
+  familyPhotoGameStep: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf,
+    type: 2}
 --- !u!1 &7546675721078097383
 GameObject:
   m_ObjectHideFlags: 0
