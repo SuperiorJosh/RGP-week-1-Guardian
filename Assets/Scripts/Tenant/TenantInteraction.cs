@@ -16,20 +16,31 @@ public class TenantInteraction : MonoBehaviour
 
     // References
     private Interactable interactableComponent;
+    private DialogueSender dialogueSender;
 
     // Game steps
+    [SerializeField] GameStepEvent initialTalkTenant;
     [SerializeField] GameStepEvent familyPhotoGameStep;
+
+    // Dialogue data
+    [SerializeField] DialogueData initialTalkData;
 
     // On awake
     private void Awake()
     {
         interactableComponent = GetComponent<Interactable>();
         interactableComponent.ItemInteraction.AddListener(OnInteract);
+
+        dialogueSender = GetComponent<DialogueSender>();
     }
 
     private void OnInteract(ItemData itemData)
     {
-        if (familyPhotoGameStep.CurrentState == GameStepEventState.Completed)
+        if (initialTalkTenant.CurrentState == GameStepEventState.NotStarted)
+        {
+            dialogueSender.DeliverDialogue(initialTalkData);
+        }
+        else if (familyPhotoGameStep.CurrentState == GameStepEventState.Completed)
         {
             dialogueText = "Please be careful with that photo";
             WorldDialogue();
