@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 122562487329819278}
   - component: {fileID: 4469930474736200444}
   - component: {fileID: 2242506348000953267}
+  - component: {fileID: 1917957478298313347}
   m_Layer: 0
   m_Name: Tape
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8778564481009918022
 MeshFilter:
@@ -135,3 +136,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 4cb2b25e433df9c4b93a93850610f1a9, type: 2}
+--- !u!114 &1917957478298313347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94862871302227394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ca10e2a5e74c741a9529fd0b8a915a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
