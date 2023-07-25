@@ -9,10 +9,12 @@ public class RotateBillboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float _camYrotation = mainCamera.transform.rotation.y;
-        float _angleDifference = _camYrotation - gameObject.transform.rotation.y;
+        transform.forward = -mainCamera.transform.forward;
+        
+        //float _camYrotation = mainCamera.transform.rotation.y;
+        //float _angleDifference = _camYrotation - gameObject.transform.rotation.y;
 
-        gameObject.transform.Rotate(0.0f, _angleDifference, 0.0f, Space.World);
+        //gameObject.transform.Rotate(0.0f, _angleDifference, 0.0f, Space.World);
         //Debug.Log("Cam Y rotation: " + _camYrotation);
     }
 }
