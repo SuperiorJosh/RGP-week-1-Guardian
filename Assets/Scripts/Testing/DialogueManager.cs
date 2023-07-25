@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ProcessDialogue(DialogueData _dialogueReceived)
     {
-        if(_dialogueReceived._lines.Length == 0)
+        if(_dialogueReceived.dialogueDataList.Count == 0)
         {
             // No lines provided. Do nothing.
             return;
@@ -39,8 +39,8 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(true);
         linesIndex = 0;
         dialogueReceived = _dialogueReceived;
-        speakersImage.sprite = dialogueReceived._speakersSprite;
-        tmpro.text = dialogueReceived._lines[linesIndex];
+        speakersImage.sprite = dialogueReceived.dialogueDataList[0].speakerSprite;
+        tmpro.text = dialogueReceived.dialogueDataList[0].dialogueLine;
 
         // TODO: Activate dialogue UI.
     }
@@ -48,9 +48,10 @@ public class DialogueManager : MonoBehaviour
     public void NextLine()
     {
         linesIndex++;
-        if(linesIndex < dialogueReceived._lines.Length)
+        if(linesIndex < dialogueReceived.dialogueDataList.Count)
         {
-            tmpro.text = dialogueReceived._lines[linesIndex];
+            speakersImage.sprite = dialogueReceived.dialogueDataList[linesIndex].speakerSprite;
+            tmpro.text = dialogueReceived.dialogueDataList[linesIndex].dialogueLine;
         }
         else{
             // No more lines.
