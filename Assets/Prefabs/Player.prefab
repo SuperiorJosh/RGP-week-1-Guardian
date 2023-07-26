@@ -242,7 +242,6 @@ GameObject:
   - component: {fileID: 7353704131556736991}
   - component: {fileID: 6829194915030660407}
   - component: {fileID: 3563128283922173317}
-  - component: {fileID: 3141580751338282117}
   - component: {fileID: 5467035452076907292}
   - component: {fileID: 5575769303985716414}
   m_Layer: 0
@@ -268,7 +267,7 @@ Transform:
   - {fileID: 2054861923315127850}
   - {fileID: 2630283338074827093}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7353704131556736991
 MonoBehaviour:
@@ -324,21 +323,6 @@ MonoBehaviour:
   ItemsCombined:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3141580751338282117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5481497873070049857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee01a522bdbaf2247b88ee469083a369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 0}
-  speakersImage: {fileID: 0}
-  tmpro: {fileID: 0}
 --- !u!114 &5467035452076907292
 MonoBehaviour:
   m_ObjectHideFlags: 0
