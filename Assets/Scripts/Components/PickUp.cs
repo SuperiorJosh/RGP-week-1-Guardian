@@ -8,7 +8,7 @@ public class PickUp : MonoBehaviour
     Interactable interactable;
     [SerializeField] ItemData itemData;
 
-    public List<UnityEvent> eventOnPickUpList;
+    public UnityEvent eventOnPickUp;
     
     void Awake()
     {
@@ -32,10 +32,7 @@ public class PickUp : MonoBehaviour
         
         Inventory.Instance.AddItem(itemData);
 
-        foreach (UnityEvent pickUpEvent in eventOnPickUpList)
-        {
-            pickUpEvent?.Invoke();
-        }
+        eventOnPickUp?.Invoke();
 
         Destroy(gameObject);
     }
