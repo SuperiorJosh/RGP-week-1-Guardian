@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using DG.Tweening;
 using TMPro;
@@ -19,77 +20,244 @@ public class UIDialogue : MonoBehaviour
 
     private DialogueSpeaker m_currentSpeaker;
     private DialogueData m_data;
+    private int dialogueIndex;
     private int linesIndex;
 
-    private RectTransform m_rectTransform;
+    private ActorDialoguePanel m_currentPanel;
+    private ActorDialoguePanel m_otherPanel;
     [SerializeField] private RectTransform m_textPanel;
 
+    [SerializeField] private ActorDialoguePanel m_playerDialogue;
+    [SerializeField] private ActorDialoguePanel m_npcDialogue;
+    
+    [SerializeField] private DialogueSpeaker m_playerSpeakerRef;
+
+    [SerializeField] private Color m_inactivePanelColour;
+    [SerializeField] private Color m_inactiveSpeakerColour;
+
+    private int m_npcDialogueCount;
+    private int m_playerDialogueCount;
+    
+    [Serializable]
+    public struct ActorDialoguePanel
+    {
+        public RectTransform DialoguePanel;
+        public Image DialoguePanelBg;
+        public Image SpeakerImage;
+        public TMP_Text DialogueText;
+    }
+    
     public bool IsActive => m_data != null;
     
     private void Awake()
     {
         m_canvasGroup = GetComponent<CanvasGroup>();
-        m_rectTransform = transform as RectTransform;
     }
 
     private void Start()
     {
         m_canvasGroup.alpha = 0;
         m_canvasGroup.blocksRaycasts = false;
-        m_text.text = "";
-        m_textPanel.localScale = new Vector3(0, 0, 0);
-        m_speakerImage.transform.localScale = new Vector3(0, 0, 0);
+        m_playerDialogue.DialogueText.text = "";
+        m_npcDialogue.DialogueText.text = "";
+        m_playerDialogue.DialoguePanel.localScale = new Vector3(0, 0, 0);
+        m_playerDialogue.SpeakerImage.transform.localScale = new Vector3(0, 0, 0);
+        m_npcDialogue.DialoguePanel.localScale = new Vector3(0, 0, 0);
+        m_npcDialogue.SpeakerImage.transform.localScale = new Vector3(0, 0, 0);
     }
 
     public void ShowDialogue(DialogueData dialogue)
     {
-        linesIndex = 0;
+        dialogueIndex = 0;
         m_canvasGroup.blocksRaycasts = true;
         
         m_data = dialogue;
         var firstDialogue = m_data.dialogueDataList[0];
         m_currentSpeaker = firstDialogue.Speaker;
-        m_speakerImage.sprite = firstDialogue.Speaker.GetEmotion(firstDialogue.Emotion);
-        var sequence = DOTween.Sequence()
-            .Insert(0f, m_speakerImage.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f))
-            .Insert(0.1f, m_canvasGroup.DOFade(1f, 0.2f))
-            .Insert(0.1f, m_textPanel.DOScale(new Vector3(1f, 1f, 1f), 0.5f));
-
-        sequence.OnComplete(() =>
-        {
-            m_text.text = firstDialogue.dialogueLine;
-        });
         
-        sequence.Play();
-    }
-
-    private void ShowNext()
-    {
-        linesIndex++;
-        if (linesIndex < m_data.dialogueDataList.Count)
+        // assign initial npc sprite
+        foreach (var dialog in m_data.dialogueDataList.Where(dialog => dialog.Speaker != m_playerSpeakerRef))
         {
-            var next = m_data.dialogueDataList[linesIndex];
-            if (next.Speaker != null && next.Speaker != m_currentSpeaker)
-            {
-                m_currentSpeaker = next.Speaker;
-            }
-            m_speakerImage.sprite = m_currentSpeaker.GetEmotion(next.Emotion);
-            m_text.text = next.dialogueLine;
+            if (dialog.Speaker == null) continue;
+            m_npcDialogue.SpeakerImage.sprite = dialog.Speaker.GetEmotion(SpeakerEmotions.Neutral);
+            break;
+        }
+
+        m_npcDialogueCount = m_data.dialogueDataList.Count(dialog => dialog.Speaker != m_playerSpeakerRef && dialog.Speaker != null);
+        m_playerDialogueCount = m_data.dialogueDataList.Count(dialog => dialog.Speaker == m_playerSpeakerRef);
+
+        if (m_currentSpeaker == m_playerSpeakerRef)
+        {
+            ShowPlayerDialogue();
         }
         else
         {
+            ShowNpcDialogue();
+        }
+    }
+
+    void ShowPlayerDialogue()
+    {
+        var dialogue = m_data.dialogueDataList[dialogueIndex];
+        m_playerDialogue.SpeakerImage.sprite = dialogue.Speaker.GetEmotion(dialogue.Emotion);
+        m_currentSpeaker = dialogue.Speaker;
+        ShowSequence(m_playerDialogue);
+    }
+
+    void ShowNpcDialogue()
+    {
+        var dialogue = m_data.dialogueDataList[dialogueIndex];
+        m_npcDialogue.SpeakerImage.sprite = dialogue.Speaker.GetEmotion(dialogue.Emotion);
+        m_currentSpeaker = dialogue.Speaker;
+        ShowSequence(m_npcDialogue);
+    }
+
+    void ShowSequence(ActorDialoguePanel actorDialoguePanel)
+    {
+        var showOtherDialogue = true;
+        if (actorDialoguePanel.Equals(m_playerDialogue))
+        {
+            m_currentPanel = m_playerDialogue;
+            m_otherPanel = m_npcDialogue;
+            if (m_npcDialogueCount <= 0)
+            {
+                // enable other box
+                showOtherDialogue = false;
+            }
+        }
+        else
+        {
+            m_currentPanel = m_npcDialogue;
+            m_otherPanel = m_playerDialogue;
+            if (m_playerDialogueCount <= 0)
+            {
+                showOtherDialogue = false;
+            }
+        }
+
+        m_currentPanel.DialoguePanel.transform.SetAsLastSibling();
+        
+        if (showOtherDialogue)
+        {
+            m_otherPanel.DialoguePanelBg.color = m_inactivePanelColour;
+            m_otherPanel.SpeakerImage.color = m_inactiveSpeakerColour;
+        }
+        else
+        {
+            var zeroAlpha = new Color(255f, 255f, 255f, 0f);
+            m_otherPanel.DialoguePanelBg.color = zeroAlpha;
+            m_otherPanel.SpeakerImage.color = zeroAlpha;
+        }
+
+        var white = new Color(255f,255f,255f,255f);
+        m_currentPanel.DialoguePanelBg.color = white;
+        m_currentPanel.SpeakerImage.color = white;
+
+        var sequence = DOTween.Sequence();
+        sequence
+            .Insert(0f, m_canvasGroup.DOFade(1f, 0.3f))
+            .Insert(0.1f, m_currentPanel.SpeakerImage.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f))
+            .Insert(0.1f, m_currentPanel.DialoguePanel.DOScale(new Vector3(1f, 1f, 1f), 0.5f).OnComplete(() =>
+            {
+                m_currentPanel.DialogueText.text = m_data.dialogueDataList[0].dialogueLine;
+            }))
+            .Insert(0.2f, m_currentPanel.DialogueText.DOFade(1f, 0.2f));
+        
+        if (showOtherDialogue)
+        {
+            sequence.Insert(0.3f, m_otherPanel.SpeakerImage.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f))
+                .Insert(0.3f, m_otherPanel.DialoguePanel.DOScale(new Vector3(1f, 1f, 1f), 0.5f))
+                .Insert(0.4f, m_otherPanel.DialogueText.DOFade(1f, 0.2f));
+        }
+
+        sequence.Play();
+    }
+
+    void HideSequence(Transform _speakerImage, RectTransform _panel)
+    {
+        
+    }
+    
+    private void ShowNext()
+    {
+        dialogueIndex++;
+        if (dialogueIndex >= m_data.dialogueDataList.Count)
+        {
+            // hide the dialogue
             var sequence = DOTween.Sequence();
-            sequence.Insert(0, m_textPanel.DOScale(new Vector3(0f, 0f, 0f), 0.2f));
-            sequence.Insert(0, m_speakerImage.transform.DOScale(new Vector3(0f, 0f, 0f), 0.2f));
+            sequence
+                .Insert(0f, m_canvasGroup.DOFade(0f, 0.3f))
+                .Insert(0.1f, m_currentPanel.SpeakerImage.transform.DOScale(0f, 0.2f))
+                .Insert(0.1f, m_currentPanel.DialoguePanel.DOScale(0f,0.2f))
+                .Insert(0.2f, m_currentPanel.DialogueText.DOFade(0f, 0.2f))
+                .Insert(0.3f, m_otherPanel.SpeakerImage.transform.DOScale(0F, 0.2f))
+                .Insert(0.3f, m_otherPanel.DialoguePanel.DOScale(0f, 0.5f))
+                .Insert(0.4f, m_otherPanel.DialogueText.DOFade(0f, 0.2f));
             sequence.OnComplete(() =>
             {
                 m_canvasGroup.alpha = 0;
                 m_canvasGroup.blocksRaycasts = false;
                 m_data = null;
                 DialogueFinished?.Invoke();
-                m_text.text = "";
+                m_npcDialogue.DialogueText.text = "";
+                m_playerDialogue.DialogueText.text = "";
             });
             sequence.Play();
+        }
+        else
+        {
+            var dialogue = m_data.dialogueDataList[dialogueIndex];
+            if (dialogue.Speaker != m_currentSpeaker)
+            {
+                if (dialogue.Speaker == m_playerSpeakerRef)
+                {
+                    // is player
+                    m_currentPanel =  m_playerDialogue;
+                    m_otherPanel = m_npcDialogue;
+                }
+                else
+                {
+                    // change to other panel
+                    m_currentPanel = m_npcDialogue;
+                    m_otherPanel = m_playerDialogue; 
+                }
+                // hide other panel
+                var hideShowSequence = DOTween.Sequence();
+
+                if (dialogue.Speaker)
+                {
+                    m_currentPanel.SpeakerImage.sprite = dialogue.Speaker.GetEmotion(dialogue.Emotion);
+                }
+
+                hideShowSequence
+                    // change active panel to inactive
+                    .Insert(0f, m_otherPanel.DialoguePanelBg.DOColor(m_inactivePanelColour, 0.2f))
+                    .Insert(0f, m_otherPanel.SpeakerImage.DOColor(m_inactiveSpeakerColour, 0.2f))
+                    .Insert(0f, m_otherPanel.DialogueText.DOFade(0f, 0.1f).OnComplete(() =>
+                    {
+                        m_otherPanel.DialogueText.text = "";
+                    }))
+                    
+                    .Insert(0.1f, m_otherPanel.DialoguePanel.DOScale(0.9f, 0.1f).SetEase(Ease.InOutQuad).OnComplete(() =>
+                    {
+                        m_currentPanel.DialogueText.text = dialogue.dialogueLine;
+                        m_currentPanel.DialoguePanel.transform.SetAsLastSibling();
+                    }))
+                    .Insert(0f, m_otherPanel.SpeakerImage.transform.DOScale(0.9f, 0.2f))
+                    // change inactive to active
+                    .Insert(0.2f, m_currentPanel.DialoguePanelBg.DOColor(new Color(255f, 255f, 255f, 255f), 0.2f))
+                    .Insert(0.2f, m_currentPanel.SpeakerImage.DOColor(new Color(255f, 255f, 255f, 255f), 0.2f))
+                    .Insert(0.3f, m_currentPanel.DialoguePanel.DOScale(1f, 0.1f).SetEase(Ease.InOutQuad))
+                    .Insert(0.2f, m_currentPanel.SpeakerImage.transform.DOScale(1f, 0.2f).SetEase(Ease.InOutQuad))
+                    .Append(m_currentPanel.DialogueText.DOFade(1f, 0.1f));
+                
+                hideShowSequence.Play();
+                m_currentSpeaker = dialogue.Speaker;
+            }
+            else
+            {
+                m_currentPanel.DialogueText.text = dialogue.dialogueLine;
+            }
         }
     }
     

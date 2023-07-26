@@ -20,7 +20,7 @@ MonoBehaviour:
     Emotion: 6
     dialogueLine: It looks like a family portrait. There's Mr. Smith, his wife and
       son... and a daughter?
-  - Speaker: {fileID: 0}
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
     Emotion: 1
     dialogueLine: There is a piece that has been torn out
   - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
