@@ -28,6 +28,8 @@ public class GhostInteraction : MonoBehaviour
 
     private void OnInteract(ItemData itemData)
     {
+        dialogueSender.DeliverDialogue(initialTalkGhostDialogue);
+        CompleteGameStep(initialTalkGhostGameStep);
     }
 
     public void CompleteGameStep(GameStepEvent currentGameStep)

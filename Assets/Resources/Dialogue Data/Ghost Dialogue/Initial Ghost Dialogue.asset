@@ -33,5 +33,27 @@ MonoBehaviour:
     Emotion: 0
     dialogueLine: I... don't know
   - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: She left... I guess I need to find out more myself
+  - Speaker: {fileID: 0}
     Emotion: 0
-    dialogueLine: I guess I need to find out more myself
+    dialogueLine: '*CRASH*'
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: Another plate broken!? Was it... was it her?
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: Yes, it was Emma
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: I- I see...
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: I'll go clean up in there before anyone gets hurt...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: Is it okay if I follow you to the kitchen, it seems Emma is in
+      there currently
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: Yes, of course... anything to help her
