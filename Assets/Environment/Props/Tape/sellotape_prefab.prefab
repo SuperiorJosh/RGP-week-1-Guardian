@@ -71,7 +71,7 @@ MonoBehaviour:
         m_MethodName: DeliverDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 52f6e3dbe956a7b459edc99c26442510,
+          m_ObjectArgument: {fileID: 11400000, guid: 20553491be7fa9b4c95f2e793702391e,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
           m_IntArgument: 0
