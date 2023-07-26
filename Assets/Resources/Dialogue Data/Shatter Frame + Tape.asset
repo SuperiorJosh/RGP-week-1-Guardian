@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Shatter Frame + Tape
   m_EditorClassIdentifier: 
-  dialogueDataList: []
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 4
+    dialogueLine: That should do the job! Let's see...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 6
+    dialogueLine: It looks like a family portrait. There's Mr. Smith, his wife and
+      son... and a daughter?
+  - Speaker: {fileID: 0}
+    Emotion: 1
+    dialogueLine: There is a piece that has been torn out
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: I should ask Mr. Smith about this

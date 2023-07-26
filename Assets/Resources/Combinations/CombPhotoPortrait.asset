@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CombPhotoPortrait
   m_EditorClassIdentifier: 
   m_inputItem1: {fileID: 11400000, guid: 56565228a5fa57b45a3e07e5ffa163c5, type: 2}
-  m_inputItem2: {fileID: 11400000, guid: 4802fd25d3688c448bac4ff219c01cd9, type: 2}
+  m_inputItem2: {fileID: 11400000, guid: 033b21129c95d84479317ea32886279e, type: 2}
   m_outputItem: {fileID: 11400000, guid: 8d64358989d13c74598414cea1511eb1, type: 2}
+  dialogueData: {fileID: 11400000, guid: 19a763447dd7bb44a876babd3f183f3e, type: 2}

@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Tape Pick Up
   m_EditorClassIdentifier: 
-  dialogueDataList: []
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: Maybe I can use this to fix something

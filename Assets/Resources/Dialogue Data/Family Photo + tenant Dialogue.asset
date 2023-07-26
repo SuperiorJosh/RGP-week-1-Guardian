@@ -12,4 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Family Photo + tenant Dialogue
   m_EditorClassIdentifier: 
-  dialogueDataList: []
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: Could you have a look at this?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: Oh, you fixed it
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: It seems as though there is a piece missing, do you know where
+      it is?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: You mean this?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: It's my daughter... I didn't want the gho... uhh soul to damage
+      her in the photo
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: I understand, would it be okay if I put it back together?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: Sure... if you think it will help

@@ -15,3 +15,4 @@ MonoBehaviour:
   m_inputItem1: {fileID: 11400000, guid: 4cb2b25e433df9c4b93a93850610f1a9, type: 2}
   m_inputItem2: {fileID: 11400000, guid: 5dc8eb9ad75fa924b996aefbc59ee22c, type: 2}
   m_outputItem: {fileID: 11400000, guid: 56565228a5fa57b45a3e07e5ffa163c5, type: 2}
+  dialogueData: {fileID: 11400000, guid: 0fe80a3de756c7d47a23f9f87a0d37b8, type: 2}
