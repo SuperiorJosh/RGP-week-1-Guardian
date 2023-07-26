@@ -110,14 +110,42 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - requiredItem: {fileID: 11400000, guid: 7f4c94fdc2f70344a9fc14f9f7075e26, type: 2}
+    usableEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8684308887568082081}
+          m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
+          m_MethodName: DeliverDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 3443416381273033835}
           m_TargetAssemblyTypeName: TenantInteraction, Assembly-CSharp
           m_MethodName: CompleteGameStep
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf,
+            m_ObjectArgument: {fileID: 11400000, guid: c5c3d9acee01c314095513dcd00f46cc,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: GameStepEvent, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3443416381273033835}
+          m_TargetAssemblyTypeName: TenantInteraction, Assembly-CSharp
+          m_MethodName: ActivateGhostVision
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -159,13 +187,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82234f212f90a0744b2076f853d7d59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5983291749530330941, guid: 6d8634d459d2bc14a8dd9a1dca7ec9ea, type: 3}
-  dialogueTimer: 2
-  UICanvas: {fileID: 0}
-  dialoguePosition: {x: 0, y: 0, z: 0}
-  initialTalkTenant: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf, type: 2}
-  familyPhotoFixed: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4, type: 2}
-  initialTalkData: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e, type: 2}
+  initialTalkTenantGameStep: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf,
+    type: 2}
+  familyPhotoFixedGameStep: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4,
+    type: 2}
+  initialTalkDialogue: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e,
+    type: 2}
+  afterInitialTalkDialogue: {fileID: 11400000, guid: ff749f8646a91064d8cc44ac0cce14e2,
+    type: 2}
+  afterPhotoFixedDialogue: {fileID: 11400000, guid: 725f5b19253775c4c9aaf16d7a28deed,
+    type: 2}
+  activateGhostVision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &9056802843223735027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -260,7 +294,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f01a9c7505ff151478ad35da81a57009, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ca732e18176d4b81881e9636edc849a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

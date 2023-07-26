@@ -11,11 +11,11 @@ public class GhostBehaviour : MonoBehaviour
     private void Awake()
     {
         // Get reference to sprite renderer and set alpha
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        SetAlpha(0.1f);
+        spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
+        SetAlpha(0.2f);
 
         // Get reference to player data and listen for ghost vision toggled event
-        playerData = GameObject.Find("Main Camera").GetComponent<PlayerData>();
+        playerData = GameObject.Find("Player").GetComponent<PlayerData>();
         playerData.GhostVisionToggle.AddListener(OnGhostVisionToggled);
 
         // Set ghost as inactive initially

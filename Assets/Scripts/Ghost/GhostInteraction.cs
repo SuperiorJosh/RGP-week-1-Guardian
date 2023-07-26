@@ -7,79 +7,27 @@ using UnityEngine;
 
 public class GhostInteraction : MonoBehaviour
 {
-    // World dialogue variables
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private float dialogueTimer;
-    [SerializeField] private GameObject UICanvas;
-    [SerializeField] private Vector3 dialoguePosition;
-    private GameObject dialogueBox = null;
-    private string dialogueText = "I'm not unlocking the door!";
-
-    // Cutscene dialogue
-    [SerializeField] private List<string> dadDialogue;
-    [SerializeField] private List<string> familyDialogue;
-    [SerializeField] private List<string> missedBirthdayDialogue;
-    [SerializeField] private List<string> birthdayPartyDialogue;
-
-    // In world dialogue
-    [SerializeField] private string kitchenDialogue;
-    [SerializeField] private string bedroomDialogue;
-    [SerializeField] private string partyDialogue;
-
-    // First time checks
-    bool familyDialogueHasPlayed = false;
-    bool missedBirthdayDialogueHasPlayed = false;
-
     // References
     private Interactable interactableComponent;
+    private DialogueSender dialogueSender;
 
     // Game steps
-    [SerializeField] GameStepEvent unlockDoorGameStep;
-    [SerializeField] GameStepEvent entertainEmmaGameStep;
+    [SerializeField] GameStepEvent initialTalkGhostGameStep;
+
+    // Dialogue data
+    [SerializeField] DialogueData initialTalkGhostDialogue;
 
     // On awake
     private void Awake()
     {
         interactableComponent = GetComponent<Interactable>();
         interactableComponent.ItemInteraction.AddListener(OnInteract);
+
+        dialogueSender = GetComponent<DialogueSender>();
     }
 
     private void OnInteract(ItemData itemData)
     {
-        if (entertainEmmaGameStep.CurrentState == GameStepEventState.Completed && !familyDialogueHasPlayed)
-        {
-            dialogueText = "Wow I love this show! Sorry for being mean, I'll unlock the door";
-            WorldDialogue();
-            familyDialogueHasPlayed = true;
-            CompleteGameStep(unlockDoorGameStep);
-            dialogueText = "Do you want to play?";
-        }
-        else
-        {
-            WorldDialogue();
-        }
-    }
-
-    private void WorldDialogue()
-    {
-        if (dialogueBox == null)
-        {
-            // Instantiate dialogue box and get reference to text component
-            dialogueBox = Instantiate(prefab);
-            dialogueBox.transform.SetParent(UICanvas.transform, false);
-            dialogueBox.transform.position = dialoguePosition;
-            TMP_Text textBox = dialogueBox.GetComponentInChildren<TMP_Text>();
-            textBox.text = dialogueText;
-
-            StartCoroutine(TimerForDestroy());
-        }
-    }
-
-    private IEnumerator TimerForDestroy()
-    {
-        yield return new WaitForSeconds(dialogueTimer);
-
-        Destroy(dialogueBox);
     }
 
     public void CompleteGameStep(GameStepEvent currentGameStep)
