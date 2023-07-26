@@ -23,13 +23,16 @@ public class CombinationData : ScriptableObject
         
     }
     
+    
     public static void CreateNew(ItemData inputOne, ItemData inputTwo)
     {
+        #if UNITY_EDITOR
         var combination = CreateInstance(typeof(CombinationData)) as CombinationData;
         combination.m_inputItem1 = inputOne;
         combination.m_inputItem2 = inputTwo;
         AssetDatabase.CreateAsset(combination, $"Assets/Resources/Combinations/{inputOne.Name}{inputTwo.Name}Combination.asset");
         AssetDatabase.SaveAssets();
         Selection.activeObject = AssetDatabase.LoadAssetAtPath<Object>(AssetDatabase.GetAssetPath(combination));
+        #endif
     }
 }

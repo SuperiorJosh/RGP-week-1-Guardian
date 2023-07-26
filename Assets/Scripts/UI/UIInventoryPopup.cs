@@ -61,6 +61,7 @@ public class UIInventoryPopup : MonoBehaviour
         var combined = Inventory.Instance.CombineItems(itemOne, itemTwo);
         if (combined == null) return;
         Debug.Log($"Combined {itemOne.Name} and {itemTwo.Name}");
+        
         m_activeIcon.Setup(combined.Output);
         m_activeIcon.OnClicked.AddListener(m_onIconClickCallback);
         Hide();
