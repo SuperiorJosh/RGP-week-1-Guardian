@@ -9,81 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf167b622b63e54eb5a5e722e0997d7, type: 3}
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Initial Talk Dialogue
   m_EditorClassIdentifier: 
   dialogueDataList:
-  - speakerSprite: {fileID: 21300000, guid: a730772d715a6f1419d24dc6e09c191a, type: 3}
-    speakerName: You
-    dialogueLine: Thank you for calling me Mr. Smith
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: I read the rundown before I came but could you talk me through
-      it again?
-  - speakerSprite: {fileID: 0}
-    speakerName: Mr. Smith
-    dialogueLine: What? Oh yes... Sorry, I'm having trouble thinking straight with
-      all the strange things happening lately
-  - speakerSprite: {fileID: 0}
-    speakerName: Mr. Smith
-    dialogueLine: Things are just being moved around... and breaking suddenly
-  - speakerSprite: {fileID: 0}
-    speakerName: Mr. Smith
-    dialogueLine: It must just be a coincidence
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: I see... it sounds like we might be dealing with a poltergeist
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: A Poltergeist!? You mean there's a g-ghost in my house!?
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: No, no. They aren't ghosts, they are lost souls!
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Lost souls are condensed memories and wishes of those who died
-      with unfulfilled desires
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: So... that's different to a ghost?
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: It's kind of complicated... let's just move on
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Can you tell me more in detail about this lost soul?
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: Uhhhh, okay...
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: When did the soul activity start?
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: It started a few days ago... It was subtle at first but now it's
-      really worrying me
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: At first it was moving dishes and chairs slightly, then it started
-      breaking picture frames and plates!
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: I tried fixing them but it's no use, it keeps breaking the same
-      things over and over
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Hmmm... it seems the soul's regrets may be tied to those objects
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: Not only that... one of the doors in the house close done day and
-      won't open, even though the door has no lock
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Thank you for sharing these details
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: I think I have a good starting point, I'll begin investigating
-      and see what I can find
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: I'll be right here if you need anything
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: 

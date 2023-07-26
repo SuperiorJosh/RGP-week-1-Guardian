@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf167b622b63e54eb5a5e722e0997d7, type: 3}
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Newspaper Clipping + Tenant Dialogue Data
   m_EditorClassIdentifier: 
-  dialogueDataList:
-  - speakerSprite: {fileID: 0}
-    speakerName: 
-    dialogueLine: 
+  dialogueDataList: []
