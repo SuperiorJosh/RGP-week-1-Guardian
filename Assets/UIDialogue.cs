@@ -58,7 +58,6 @@ public class UIDialogue : MonoBehaviour
         sequence.OnComplete(() =>
         {
             m_text.text = firstDialogue.dialogueLine;
-            linesIndex++;
         });
         
         sequence.Play();
@@ -80,15 +79,17 @@ public class UIDialogue : MonoBehaviour
         else
         {
             var sequence = DOTween.Sequence();
-            sequence.Insert(0, m_rectTransform.DOScale(new Vector3(0f, 0f, 0f), 0.5f));
-            sequence.Insert(0.3f, m_canvasGroup.DOFade(0f, 0.2f));
+            sequence.Insert(0, m_textPanel.DOScale(new Vector3(0f, 0f, 0f), 0.2f));
+            sequence.Insert(0, m_speakerImage.transform.DOScale(new Vector3(0f, 0f, 0f), 0.2f));
             sequence.OnComplete(() =>
             {
                 m_canvasGroup.alpha = 0;
                 m_canvasGroup.blocksRaycasts = false;
                 m_data = null;
                 DialogueFinished?.Invoke();
+                m_text.text = "";
             });
+            sequence.Play();
         }
     }
     
