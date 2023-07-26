@@ -38,7 +38,9 @@ public class TenantInteraction : MonoBehaviour
     {
         if (initialTalkTenant.CurrentState == GameStepEventState.NotStarted)
         {
+            Debug.Log("Interacted and playing intial talk dialogue");
             dialogueSender.DeliverDialogue(initialTalkData);
+            CompleteGameStep(initialTalkTenant);
         }
         else if (familyPhotoGameStep.CurrentState == GameStepEventState.Completed)
         {

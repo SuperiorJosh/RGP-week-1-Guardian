@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8684308887568082081}
   - component: {fileID: 1896523146499107059}
   - component: {fileID: 3443416381273033835}
+  - component: {fileID: 9056802843223735027}
   m_Layer: 0
   m_Name: Tenant
   m_TagString: Untagged
@@ -140,8 +141,31 @@ MonoBehaviour:
   dialogueTimer: 2
   UICanvas: {fileID: 0}
   dialoguePosition: {x: 0, y: 0, z: 0}
+  initialTalkTenant: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf, type: 2}
   familyPhotoGameStep: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf,
     type: 2}
+  initialTalkData: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e, type: 2}
+--- !u!65 &9056802843223735027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175543212744088182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.0018187, y: 9.85478, z: 1.2800461}
+  m_Center: {x: -0.0709033, y: 4.427388, z: -0.14002293}
 --- !u!1 &7546675721078097383
 GameObject:
   m_ObjectHideFlags: 0
