@@ -84,18 +84,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - requiredItem: {fileID: 11400000, guid: 56565228a5fa57b45a3e07e5ffa163c5, type: 2}
-    usableEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1896523146499107059}
-          m_TargetAssemblyTypeName: DeliverItem, Assembly-CSharp
-          m_MethodName: SendItem
+        - m_Target: {fileID: 3443416381273033835}
+          m_TargetAssemblyTypeName: TenantInteraction, Assembly-CSharp
+          m_MethodName: CompleteGameStep
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 4802fd25d3688c448bac4ff219c01cd9,
+            m_ObjectArgument: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4,
               type: 2}
-            m_ObjectArgumentAssemblyTypeName: ItemData, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: GameStepEvent, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -142,8 +138,7 @@ MonoBehaviour:
   UICanvas: {fileID: 0}
   dialoguePosition: {x: 0, y: 0, z: 0}
   initialTalkTenant: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf, type: 2}
-  familyPhotoGameStep: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf,
-    type: 2}
+  familyPhotoFixed: {fileID: 0}
   initialTalkData: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e, type: 2}
 --- !u!65 &9056802843223735027
 BoxCollider:

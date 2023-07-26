@@ -9,81 +9,79 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf167b622b63e54eb5a5e722e0997d7, type: 3}
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Initial Talk Dialogue
   m_EditorClassIdentifier: 
   dialogueDataList:
-  - speakerSprite: {fileID: 21300000, guid: a730772d715a6f1419d24dc6e09c191a, type: 3}
-    speakerName: You
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
     dialogueLine: Thank you for calling me Mr. Smith
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: I read the rundown before I came but could you talk me through
-      it again?
-  - speakerSprite: {fileID: 0}
-    speakerName: Mr. Smith
-    dialogueLine: What? Oh yes... Sorry, I'm having trouble thinking straight with
-      all the strange things happening lately
-  - speakerSprite: {fileID: 0}
-    speakerName: Mr. Smith
-    dialogueLine: Things are just being moved around... and breaking suddenly
-  - speakerSprite: {fileID: 0}
-    speakerName: Mr. Smith
-    dialogueLine: It must just be a coincidence
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: I see... it sounds like we might be dealing with a poltergeist
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: A Poltergeist!? You mean there's a g-ghost in my house!?
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: No, no. They aren't ghosts, they are lost souls!
-  - speakerSprite: {fileID: 0}
-    speakerName: You
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: I've read a rundown of the matter, but could you tell me again
+      what's happening?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: What? Oh yes... Sorry I'm having trouble thinking straight with
+      the the strange things happening lately
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: That's completely understandable
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: When did this first start happening?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: It started a few days ago... it was small things at first but it's
+      been getting worse
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: At first it was dishes and chair being moved slightly
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: But since yesterday it's been breaking picture frames and plates!
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: I've tried fixing them but it's pointless... whatever this is keeps
+      breaking the same things
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: Hmm, I see... Has anything else strange happened?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 3
+    dialogueLine: One of the doors closed today and I haven't been able to open it,
+      even though it has no lock
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: I guess it doesn't matter since no one uses that room anymore...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 6
+    dialogueLine: I see, I think we might be dealing with a poltergeist
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: A poltergeist!? You mean there's a g-ghost in my house!?
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: There's no such things as ghosts, this is a lost soul
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
     dialogueLine: Lost souls are condensed memories and wishes of those who died
-      with unfulfilled desires
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: So... that's different to a ghost?
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: It's kind of complicated... let's just move on
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Can you tell me more in detail about this lost soul?
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: Uhhhh, okay...
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: When did the soul activity start?
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: It started a few days ago... It was subtle at first but now it's
-      really worrying me
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: At first it was moving dishes and chairs slightly, then it started
-      breaking picture frames and plates!
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: I tried fixing them but it's no use, it keeps breaking the same
-      things over and over
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Hmmm... it seems the soul's regrets may be tied to those objects
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: Not only that... one of the doors in the house close done day and
-      won't open, even though the door has no lock
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: Thank you for sharing these details
-  - speakerSprite: {fileID: 0}
-    speakerName: You
-    dialogueLine: I think I have a good starting point, I'll begin investigating
-      and see what I can find
-  - speakerSprite: {fileID: 0}
-    speakerName: Client
-    dialogueLine: I'll be right here if you need anything
+      with unfulfiled desires
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: Isn't that just... what a ghost is?
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 5
+    dialogueLine: It's not a ghost! It's a lost soul!
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: Okay, sorry! A lost soul
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: Don't worry about it, anyway I think I get the gist of it
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: If it's alright with you I'll start looking around
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: Of course... I'll be right here if you need anything

@@ -20,7 +20,7 @@ public class TenantInteraction : MonoBehaviour
 
     // Game steps
     [SerializeField] GameStepEvent initialTalkTenant;
-    [SerializeField] GameStepEvent familyPhotoGameStep;
+    [SerializeField] GameStepEvent familyPhotoFixed;
 
     // Dialogue data
     [SerializeField] DialogueData initialTalkData;
@@ -42,7 +42,7 @@ public class TenantInteraction : MonoBehaviour
             dialogueSender.DeliverDialogue(initialTalkData);
             CompleteGameStep(initialTalkTenant);
         }
-        else if (familyPhotoGameStep.CurrentState == GameStepEventState.Completed)
+        else if (familyPhotoFixed.CurrentState == GameStepEventState.Completed)
         {
             dialogueText = "Please be careful with that photo";
             WorldDialogue();

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3036829317042937929}
   - component: {fileID: 8369963633651852619}
   - component: {fileID: 7052787450851643334}
+  - component: {fileID: 641924602806572025}
   m_Layer: 0
   m_Name: shattered_frame_prefab
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 8349833845699541620}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -19.659, y: 72.556, z: -46.955}
 --- !u!114 &8369963633651852619
 MonoBehaviour:
@@ -62,6 +63,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 5dc8eb9ad75fa924b996aefbc59ee22c, type: 2}
+  eventOnPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 641924602806572025}
+        m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
+        m_MethodName: DeliverDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 21dc7c767ac2906439af9044a02b6c32,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &641924602806572025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409193254326532851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2418d5c60b8cbb439882c58aceb8313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2668542133430385872
 GameObject:
   m_ObjectHideFlags: 0

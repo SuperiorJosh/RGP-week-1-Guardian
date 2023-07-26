@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 537883b781fe4fdc909644382ba3990c, type: 3}
-  m_Name: Tenant
+  m_Name: Player
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 21300000, guid: 8ba2354a514a63849b9fc0aff0970c11, type: 3}
-    - {fileID: 21300000, guid: ae6d2d53db1dd61409a7d3df8b0438bb, type: 3}
-    - {fileID: 21300000, guid: 6aa2c842309e9ac4b87723e38a7902b5, type: 3}
-    - {fileID: 21300000, guid: c6749f4c9f06dae4dbf034f4178ae15c, type: 3}
+    - {fileID: 21300000, guid: bea16b2f1f2260a42a004d938711737a, type: 3}
+    - {fileID: 21300000, guid: a7b966572eafb954e8e8ddd2268b3b95, type: 3}
+    - {fileID: 21300000, guid: 7ca989e525d2f5443a4f38bded773ad9, type: 3}
+    - {fileID: 21300000, guid: ce7099d2e3c4c724b94cc0f99c1a1253, type: 3}
+    - {fileID: 21300000, guid: 1bf1cb3526bc90c468b9b9dc9b9e73e8, type: 3}
+    - {fileID: 21300000, guid: 3440331db7726124d9da28fa87979044, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -44,41 +46,65 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
       Data: 4
     - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 10
-      Data: 2
-    - Name: 
       Entry: 8
       Data: 
     - Name: 
@@ -89,7 +115,7 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 10
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -99,4 +125,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  m_name: Mr. Smith
+  m_name: Player
