@@ -28,4 +28,7 @@ public enum SpeakerEmotions
     Sad,
     Shocked,
     Speaking,
+    Happy,
+    Angry,
+    Proud
 }

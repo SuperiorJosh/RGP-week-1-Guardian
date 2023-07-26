@@ -15,7 +15,11 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 8ba2354a514a63849b9fc0aff0970c11, type: 3}
+    - {fileID: 21300000, guid: ae6d2d53db1dd61409a7d3df8b0438bb, type: 3}
+    - {fileID: 21300000, guid: 6aa2c842309e9ac4b87723e38a7902b5, type: 3}
+    - {fileID: 21300000, guid: c6749f4c9f06dae4dbf034f4178ae15c, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -48,8 +52,8 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -60,8 +64,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -72,8 +76,8 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -84,8 +88,8 @@ MonoBehaviour:
       Entry: 3
       Data: 3
     - Name: $v
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -95,4 +99,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  m_name: Tenant
+  m_name: Mr. Smith
