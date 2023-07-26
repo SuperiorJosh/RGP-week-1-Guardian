@@ -15,4 +15,4 @@ MonoBehaviour:
   m_name: NewspaperClipping
   m_description: 
   m_prefab: {fileID: 0}
-  m_inventoryIcon: {fileID: 0}
+  m_inventoryIcon: {fileID: 21300000, guid: 34559ef82f34e464aa0814e8a55f1459, type: 3}

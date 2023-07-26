@@ -71,7 +71,7 @@ public class Inventory : MonoBehaviour
         if (combination == null) return null;
         RemoveItem(itemOne);
         RemoveItem(itemTwo);
-        AddItem(combination.Output, false);
+        AddItem(combination.Output, true);
         ItemsCombined?.Invoke(combination);
         return combination;
 

@@ -34,6 +34,7 @@ public class UIInventoryIcon : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void Setup(ItemData item)
     {
+        OnClicked.RemoveAllListeners();
         m_itemData = item;
         m_iconImage.sprite = item.InventoryIcon;
         m_canvasGroup.alpha = 1f;
@@ -52,15 +53,15 @@ public class UIInventoryIcon : MonoBehaviour, IPointerClickHandler, IPointerEnte
         m_active = false;
         m_canvasGroup.alpha = 0f;
         m_canvasGroup.blocksRaycasts = false;
+        m_itemData = null;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClicked?.Invoke(this);
-        
         m_active = !m_active;
         var endVal = m_active ? 1f : 0f;
         m_iconBgImage.DOFade(endVal, 0.2f);
+        OnClicked?.Invoke(this);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

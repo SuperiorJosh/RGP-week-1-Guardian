@@ -6,8 +6,11 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "", menuName = "Game/Combine Data")]
 public class CombinationData : ScriptableObject
 {
+    [InlineEditor(InlineEditorModes.FullEditor)]
     [SerializeField] private ItemData m_inputItem1;
+    [InlineEditor(InlineEditorModes.FullEditor)]
     [SerializeField] private ItemData m_inputItem2;
+    [InlineEditor(InlineEditorModes.FullEditor)]
     [SerializeField] private ItemData m_outputItem;
     //[SerializeField] UnityEvent m_usableEvent;
 

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {   
     //
-    private Dictionary<int, UIInventoryIcon> m_icons = new();
+    private Dictionary<UIInventoryIcon, int> m_icons = new();
     private List<UIInventoryIcon> m_inactiveIcons = new();
     private List<UIInventoryIcon> m_activeIcons = new();
 
@@ -22,7 +22,7 @@ public class UIInventory : MonoBehaviour
         var count = 0;
         foreach (var icon in GetComponentsInChildren<UIInventoryIcon>())
         {
-            m_icons.Add(count, icon);
+            m_icons.Add(icon, count);
             m_inactiveIcons.Add(icon);
             count++;
         }
@@ -36,10 +36,13 @@ public class UIInventory : MonoBehaviour
 
     private void OnInventoryItemAdded(ItemData itemData)
     {
-        var icon = m_inactiveIcons.Find(x => x.Active == false);
+        UIInventoryIcon icon = null;
+        foreach (var ic in m_icons.Where(ic => ic.Key.ItemData == null))
+        {
+            icon = ic.Key;
+            break;
+        }
         if (icon == null) return;
-        m_activeIcons.Add(icon);
-        m_inactiveIcons.Remove(icon);
         var item = itemData.IsInstance ? itemData.OriginalRef : itemData;
         icon.Setup(item);
         icon.OnClicked.AddListener(OnIconClicked);
@@ -47,7 +50,7 @@ public class UIInventory : MonoBehaviour
 
     private void OnIconClicked(UIInventoryIcon icon)
     {
-        Debug.Log($"Item Clicked: {icon.ItemData.Name}");
+        //Debug.Log($"Item Clicked: {icon.ItemData.Name}");
         // show popup window
         if (!m_popupWindow.Active)
         {
@@ -64,13 +67,16 @@ public class UIInventory : MonoBehaviour
     private void OnInventoryItemRemoved(ItemData data)
     {
         var itemData = data.IsInstance ? data.OriginalRef : data;
-        var icon = m_activeIcons.Find(x => x.ItemData == itemData);
+        UIInventoryIcon icon = null;
+        foreach (var ic in m_icons.Where(ic => ic.Key.ItemData == itemData))
+        {
+            icon = ic.Key;
+        }
+        
         if (icon != null)
         {
             icon.OnClicked.RemoveListener(OnIconClicked);
             icon.Reset();
-            m_activeIcons.Remove(icon);
-            m_inactiveIcons.Add(icon);
         }
     }
 }

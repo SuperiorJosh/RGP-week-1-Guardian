@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -40,7 +41,7 @@ public class CombinationsDatabase : IDatabase<CombinationData>
 
     public IEnumerable<CombinationData> GetAll()
     {
-        return null;
+        return m_db.Values.ToList();
     }
 
     public CombinationData GetSingle()

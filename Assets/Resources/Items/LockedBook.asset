@@ -15,4 +15,4 @@ MonoBehaviour:
   m_name: LockedBook
   m_description: 
   m_prefab: {fileID: 0}
-  m_inventoryIcon: {fileID: 21300000, guid: 275dd9435832240e09984b68a4e5a317, type: 3}
+  m_inventoryIcon: {fileID: 21300000, guid: 499f49e9d45ce4ea68fec9764b51174d, type: 3}
