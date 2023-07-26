@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueDataList:
   - speakerSprite: {fileID: 0}
+    speakerName: 
     dialogueLine: 

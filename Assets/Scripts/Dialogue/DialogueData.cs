@@ -9,6 +9,7 @@ public class DialogueData : ScriptableObject
     public struct SpriteLinesPair
     {
         public Sprite speakerSprite;
+        public string speakerName;
         public string dialogueLine;
     }
     public List<SpriteLinesPair> dialogueDataList;
