@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf167b622b63e54eb5a5e722e0997d7, type: 3}
   m_Name: Newspaper Clipping + Tenant Dialogue Data
   m_EditorClassIdentifier: 
-  speakersSprite: {fileID: 21300000, guid: f01a9c7505ff151478ad35da81a57009, type: 3}
-  dialogueLines:
-  - 
+  dialogueDataList:
+  - speakerSprite: {fileID: 0}
+    dialogueLine: 

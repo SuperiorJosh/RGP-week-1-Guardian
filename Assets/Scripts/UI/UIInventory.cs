@@ -47,7 +47,7 @@ public class UIInventory : MonoBehaviour
 
     private void OnIconClicked(UIInventoryIcon icon)
     {
-        //Debug.Log($"Item Clicked: {icon.ItemData.Name}");
+        Debug.Log($"Item Clicked: {icon.ItemData.Name}");
         // show popup window
         if (!m_popupWindow.Active)
         {
