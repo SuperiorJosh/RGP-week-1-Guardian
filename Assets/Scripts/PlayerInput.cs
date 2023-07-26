@@ -24,6 +24,8 @@ public class PlayerInput : MonoBehaviour
     private float m_targetZoomDistance;
     private float m_zoomVelocity;
 
+    bool HasTalkedToTenant = false;
+
     private void Awake()
     {
         m_orbital = m_virtualCam.GetCinemachineComponent<CinemachineOrbitalTransposer>();
@@ -95,6 +97,19 @@ public class PlayerInput : MonoBehaviour
 
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
+                    // Blocker here. Want Tenant to be first interaction on game start. Link this properly to game step event.
+                    if(!HasTalkedToTenant)
+                    {
+                        var tenant = hit.collider.GetComponent<TenantInteraction>();
+                        if(tenant)
+                        {
+                            HasTalkedToTenant = true;
+                        }
+                        else{
+                            return;
+                        }
+                    }
+
                     if(InteractionManager.Instance.useButtonClicked)
                     {
                         var usable = hit.collider.GetComponentInParent<Usable>();
