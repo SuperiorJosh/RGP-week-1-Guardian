@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c609469992b12af43b3c849d2a2c287f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 4cb2b25e433df9c4b93a93850610f1a9, type: 2}
   eventOnPickUp:
     m_PersistentCalls:
       m_Calls:
