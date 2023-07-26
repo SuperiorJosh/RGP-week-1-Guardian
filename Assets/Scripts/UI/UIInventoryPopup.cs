@@ -64,6 +64,7 @@ public class UIInventoryPopup : MonoBehaviour
         m_activeIcon.Setup(combined.Output);
         m_activeIcon.OnClicked.AddListener(m_onIconClickCallback);
         Hide();
+        DialogueManager.Instance.ProcessDialogue(combined.dialogueData);
     }
 
     private void OnUseButtonClicked()

@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "", menuName = "Game/Combine Data")]
 public class CombinationData : ScriptableObject
@@ -8,10 +9,13 @@ public class CombinationData : ScriptableObject
     [SerializeField] private ItemData m_inputItem1;
     [SerializeField] private ItemData m_inputItem2;
     [SerializeField] private ItemData m_outputItem;
+    //[SerializeField] UnityEvent m_usableEvent;
 
     public ItemData InputOne => m_inputItem1;
     public ItemData InputTwo => m_inputItem2;
     public ItemData Output => m_outputItem;
+    //public UnityEvent Event => m_usableEvent;
+    public DialogueData dialogueData;
 
     [Button]
     void CreateOutput()
