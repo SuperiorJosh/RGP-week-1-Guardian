@@ -91,16 +91,17 @@ public class PlayerInput : MonoBehaviour
                 DialogueManager.Instance.NextLine();
             }
             else{
-                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
                     if(InteractionManager.Instance.useButtonClicked)
                     {
-                        if(hit.collider.GetComponent<Usable>())
+                        var usable = hit.collider.GetComponentInParent<Usable>();
+                        if(usable)
                         {
                             // Usable item. Trigger effect.
-                            hit.collider.GetComponent<Usable>().UseItem(InteractionManager.Instance.clickedItemData);
+                            usable.UseItem(InteractionManager.Instance.clickedItemData);
                         }
                         else{
                             // Clicked item was not usable.
@@ -111,9 +112,9 @@ public class PlayerInput : MonoBehaviour
                     {
                         hit.collider.GetComponent<RoomTransition>().ChangeRoom();
                     }
-                    else if (hit.collider.GetComponent<Interactable>())
+                    else if (hit.collider.GetComponentInParent<Interactable>())
                     {
-                        hit.collider.GetComponent<Interactable>().Interact(gameObject.GetComponent<PlayerData>().itemData);
+                        hit.collider.GetComponentInParent<Interactable>().Interact(gameObject.GetComponent<PlayerData>().itemData);
                     }
                 }
             } 

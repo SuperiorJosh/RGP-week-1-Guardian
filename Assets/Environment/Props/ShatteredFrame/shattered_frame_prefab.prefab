@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 8470198602256524023}
   - component: {fileID: 4607106625105546044}
   - component: {fileID: 6609793735070139172}
+  - component: {fileID: 8751892043678859731}
   m_Layer: 0
   m_Name: shattered_frame
   m_TagString: Untagged
@@ -177,3 +178,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8751892043678859731
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434230434338041328}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9014682367301433836, guid: 4726d536b574a4089ba68841f433b1b9, type: 3}
