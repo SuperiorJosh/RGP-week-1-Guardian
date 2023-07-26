@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf167b622b63e54eb5a5e722e0997d7, type: 3}
   m_Name: Family Photo + tenant Dialogue
   m_EditorClassIdentifier: 
-  dialogueDataList: []
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: 

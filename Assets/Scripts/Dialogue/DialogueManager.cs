@@ -39,7 +39,8 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(true);
         linesIndex = 0;
         dialogueReceived = _dialogueReceived;
-        speakersImage.sprite = dialogueReceived.dialogueDataList[0].speakerSprite;
+        var speaker = _dialogueReceived.dialogueDataList[0].Speaker;
+        speakersImage.sprite = speaker.GetEmotion(_dialogueReceived.dialogueDataList[0].Emotion);
         tmpro.text = dialogueReceived.dialogueDataList[0].dialogueLine;
 
         // TODO: Activate dialogue UI.
@@ -50,8 +51,10 @@ public class DialogueManager : MonoBehaviour
         linesIndex++;
         if(linesIndex < dialogueReceived.dialogueDataList.Count)
         {
-            speakersImage.sprite = dialogueReceived.dialogueDataList[linesIndex].speakerSprite;
-            tmpro.text = dialogueReceived.dialogueDataList[linesIndex].dialogueLine;
+            var dialogue = dialogueReceived.dialogueDataList[linesIndex];
+            var speaker = dialogueReceived.dialogueDataList[linesIndex].Speaker;
+            speakersImage.sprite = speaker.GetEmotion(dialogue.Emotion);
+            tmpro.text = dialogue.dialogueLine;
         }
         else{
             // No more lines.
