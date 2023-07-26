@@ -20,6 +20,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float m_zoomSmoothTime = 0.2f;
     [SerializeField] private Transform m_aimTarget;
 
+    [SerializeField] private Transform m_panTarget;
+    private Vector3 m_panTargetLastPos;
+
     private float m_currentZoomDistance;
     private float m_targetZoomDistance;
     private float m_zoomVelocity;
@@ -85,6 +88,25 @@ public class PlayerInput : MonoBehaviour
         
         m_targetZoomDistance =
             Mathf.Clamp(m_targetZoomDistance, m_minOrtho, m_maxOrtho);
+
+        
+        if(Input.GetMouseButtonDown(2))
+        {
+            m_panTargetLastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            m_virtualCam.LookAt = m_panTarget;
+        }
+        if(Input.GetMouseButton(2))
+        {
+            Vector3 mouseDelta = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_panTargetLastPos;
+            m_panTarget.Translate(mouseDelta.x, 0, mouseDelta.z);
+            m_panTargetLastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+        }
+        else{
+             m_virtualCam.LookAt = m_aimTarget;
+             m_panTarget.position = m_aimTarget.position;
+        }
+
 
         if (Input.GetMouseButtonDown(0))
         {
