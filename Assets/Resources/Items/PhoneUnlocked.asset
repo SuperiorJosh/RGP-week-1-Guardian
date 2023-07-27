@@ -15,4 +15,4 @@ MonoBehaviour:
   m_name: UnlockedPhone
   m_description: 
   m_prefab: {fileID: 0}
-  m_inventoryIcon: {fileID: 0}
+  m_inventoryIcon: {fileID: 21300000, guid: e9380bc02778f1d498d638a14f300b36, type: 3}
