@@ -15,4 +15,4 @@ MonoBehaviour:
   m_name: TornPicture
   m_description: 
   m_prefab: {fileID: 0}
-  m_inventoryIcon: {fileID: 0}
+  m_inventoryIcon: {fileID: 21300000, guid: 928b5d2b98409194aa8a8b8a81bde86c, type: 3}
