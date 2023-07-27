@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Initial Talk Dialogue
   m_EditorClassIdentifier: 
+  m_repeats: 0
+  DeliveredDialogue: 0
   dialogueDataList:
   - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
     Emotion: 0
@@ -23,7 +25,7 @@ MonoBehaviour:
   - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
     Emotion: 1
     dialogueLine: What? Oh yes... Sorry I'm having trouble thinking straight with
-      the the strange things happening lately
+      the strange things happening lately
   - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
     Emotion: 3
     dialogueLine: That's completely understandable
