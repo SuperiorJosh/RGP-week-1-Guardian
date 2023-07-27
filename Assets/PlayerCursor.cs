@@ -12,7 +12,7 @@ public class PlayerCursor : SerializedMonoBehaviour
     private UnityEvent m_overrideEvent;
 
     [SerializeField] private Image m_image;
-    [OdinSerialize] private Dictionary<Cursors, Sprite> CursorSprites = new();
+    [OdinSerialize] private Dictionary<Cursors, CursorSprite> CursorSprites = new();
     private RectTransform m_rectTransform;
 
     private struct CursorTargets
@@ -31,7 +31,7 @@ public class PlayerCursor : SerializedMonoBehaviour
     {
         // listen to
         //Cursor.SetCursor(CursorSprites[Cursors.Default],Vector2.zero, CursorMode.Auto);
-        m_image.sprite = CursorSprites[Cursors.Default];
+        SetCursor(CursorSprites[Cursors.Default]);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -50,16 +50,28 @@ public class PlayerCursor : SerializedMonoBehaviour
             endOverrideEvent.AddListener(OnCursorOverrideEnded);
         }
 
-        m_image.sprite = CursorSprites[cursor];
+        SetCursor(CursorSprites[cursor]);
         //Cursor.SetCursor(CursorSprites[cursor],Vector2.zero, CursorMode.Auto);
     }
 
     private void OnCursorOverrideEnded()
     {
         m_overrideEvent.RemoveListener(OnCursorOverrideEnded);
-        m_image.sprite = CursorSprites[Cursors.Default];
+        SetCursor(CursorSprites[Cursors.Default]);
         //Cursor.SetCursor(CursorSprites[Cursors.Default],Vector2.zero, CursorMode.Auto);
     }
+
+    private void SetCursor(CursorSprite cursorSprite)
+    {
+        m_image.sprite = cursorSprite.Sprite;
+        m_rectTransform.pivot = cursorSprite.Offset;
+    }
+}
+
+public class CursorSprite
+{
+    public Sprite Sprite;
+    public Vector2 Offset;
 }
 
 public enum Cursors
