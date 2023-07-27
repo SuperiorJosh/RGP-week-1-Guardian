@@ -151,6 +151,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - requiredItem: {fileID: 11400000, guid: 5dc8eb9ad75fa924b996aefbc59ee22c, type: 2}
+    usableEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8684308887568082081}
+          m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
+          m_MethodName: DeliverDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 81f4fb818aa02094c985cb3436d7f606,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8684308887568082081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,12 +208,16 @@ MonoBehaviour:
     type: 2}
   familyPhotoFixedGameStep: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4,
     type: 2}
+  intialTalkGhostGameStep: {fileID: 11400000, guid: f7b357f0cef328243ab24631d62961d0,
+    type: 2}
+  m_ghostVisionAvailableGameStep: {fileID: 0}
   initialTalkDialogue: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e,
     type: 2}
   afterInitialTalkDialogue: {fileID: 11400000, guid: ff749f8646a91064d8cc44ac0cce14e2,
     type: 2}
   afterPhotoFixedDialogue: {fileID: 11400000, guid: 725f5b19253775c4c9aaf16d7a28deed,
     type: 2}
+  testDialogue: {fileID: 11400000, guid: 9dfd7b0dabfff05449c3a4159adf57c3, type: 2}
   activateGhostVision:
     m_PersistentCalls:
       m_Calls: []

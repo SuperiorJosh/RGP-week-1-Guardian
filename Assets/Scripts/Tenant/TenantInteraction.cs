@@ -14,14 +14,13 @@ public class TenantInteraction : MonoBehaviour
     // Game steps
     [SerializeField] GameStepEvent initialTalkTenantGameStep;
     [SerializeField] GameStepEvent familyPhotoFixedGameStep;
+    [SerializeField] GameStepEvent intialTalkGhostGameStep;
     [SerializeField] private GameStepEvent m_ghostVisionAvailableGameStep;
 
     // Dialogue data
     [SerializeField] DialogueData initialTalkDialogue;
     [SerializeField] DialogueData afterInitialTalkDialogue;
     [SerializeField] DialogueData afterPhotoFixedDialogue;
-    
-    
 
     // Unity Event
     public UnityEvent activateGhostVision;

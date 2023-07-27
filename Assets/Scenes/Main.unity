@@ -880,8 +880,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610076906021847480, guid: ce3a691646c0e4c8c9ff8871c5862308,
         type: 3}
+      propertyPath: eventOnPickUp.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610076906021847480, guid: ce3a691646c0e4c8c9ff8871c5862308,
+        type: 3}
+      propertyPath: eventOnPickUp.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610076906021847480, guid: ce3a691646c0e4c8c9ff8871c5862308,
+        type: 3}
+      propertyPath: eventOnPickUp.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610076906021847480, guid: ce3a691646c0e4c8c9ff8871c5862308,
+        type: 3}
       propertyPath: eventOnPickUpList.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610076906021847480, guid: ce3a691646c0e4c8c9ff8871c5862308,
+        type: 3}
+      propertyPath: eventOnPickUp.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueSender, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5610076906021847480, guid: ce3a691646c0e4c8c9ff8871c5862308,
         type: 3}
@@ -938,22 +958,22 @@ PrefabInstance:
     - target: {fileID: 1481371113781071754, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000021454222
+      value: 0.000000021454227
       objectReference: {fileID: 0}
     - target: {fileID: 1481371113781071754, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000114819505
+      value: -0.000000011481954
       objectReference: {fileID: 0}
     - target: {fileID: 2054861923315127850, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000021454222
+      value: 0.000000021454227
       objectReference: {fileID: 0}
     - target: {fileID: 2054861923315127850, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000114819505
+      value: -0.000000011481954
       objectReference: {fileID: 0}
     - target: {fileID: 3415806821386034840, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
@@ -1249,8 +1269,24 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
         type: 3}
+      propertyPath: requiredItemDataList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[2].requiredItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 5dc8eb9ad75fa924b996aefbc59ee22c,
+        type: 2}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
       propertyPath: requiredItemDataList.Array.data[1].usableEvent.m_PersistentCalls.m_Calls.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[2].usableEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
         type: 3}
@@ -1259,12 +1295,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
         type: 3}
+      propertyPath: requiredItemDataList.Array.data[1].usableEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[2].usableEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
       propertyPath: requiredItemDataList.Array.data[1].usableEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
         type: 3}
+      propertyPath: requiredItemDataList.Array.data[1].usableEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[2].usableEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
       propertyPath: requiredItemDataList.Array.data[1].usableEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: TenantInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[1].usableEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: TenantInteraction, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
