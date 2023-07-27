@@ -35,7 +35,7 @@ public class TenantInteraction : MonoBehaviour
         interactableComponent.ItemInteraction.AddListener(OnInteract);
 
         dialogueSender = GetComponent<DialogueSender>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnInteract(ItemData itemData)
