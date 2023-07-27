@@ -65,7 +65,7 @@ public class UIInventoryPopup : MonoBehaviour
         var combined = Inventory.Instance.CombineItems(itemOne, itemTwo);
         if (combined == null) return;
         Debug.Log($"Combined {itemOne.Name} and {itemTwo.Name}");
-        DialogueManager.Instance.ProcessDialogue(combined.dialogueData);
+        UIManager.Instance.ProcessDialogue(combined.dialogueData);
         Hide();
     }
 

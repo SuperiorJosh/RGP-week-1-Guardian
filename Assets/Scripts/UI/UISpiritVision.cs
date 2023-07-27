@@ -50,7 +50,7 @@ public class UISpiritVision : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!m_active) return;
-        DialogueManager.Instance.ShowAltText("Spirit Vision (Shift)", transform, m_hoverOffset, true, m_cursorExited);
+        UIManager.Instance.ShowAltText("Spirit Vision (Shift)", transform, m_hoverOffset, true, m_cursorExited);
     }
 
     public void OnPointerExit(PointerEventData eventData)

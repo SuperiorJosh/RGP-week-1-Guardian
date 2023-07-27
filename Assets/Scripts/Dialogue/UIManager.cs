@@ -6,12 +6,15 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-public class DialogueManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public static DialogueManager Instance { get; private set; }
+    public static UIManager Instance { get; private set; }
     
     [SerializeField] private UIDialogue m_dialogueBox;
     [SerializeField] private UIAltTextBox m_altTextBox;
+    [SerializeField] private UIInventory m_inventory;
+
+    private bool m_showHud = true;
 
     DialogueData dialogueReceived;    
 
@@ -40,8 +43,22 @@ public class DialogueManager : MonoBehaviour
             // No lines provided. Do nothing.
             return;
         }
-        
+
+        if (m_showHud)
+        {
+            m_inventory.Hide();
+        }
+        m_dialogueBox.DialogueFinished.AddListener(OnDialogueFinished);
         m_dialogueBox.ShowDialogue(_dialogueReceived);
+    }
+
+    private void OnDialogueFinished()
+    {
+        m_dialogueBox.DialogueFinished.RemoveListener(OnDialogueFinished);
+        if (m_showHud)
+        {
+            m_inventory.Show();
+        }
     }
 
     public void NextLine()

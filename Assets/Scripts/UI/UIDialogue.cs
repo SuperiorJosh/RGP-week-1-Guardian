@@ -220,7 +220,7 @@ public class UIDialogue : MonoBehaviour
             m_canvasGroup.blocksRaycasts = false;
             //m_data = null;
             dialogueIndex = 0;
-            //DialogueFinished?.Invoke();
+            DialogueFinished?.Invoke();
             m_npcDialogue.DialogueText.text = "";
             m_playerDialogue.DialogueText.text = "";
             m_currentSequence = null;
