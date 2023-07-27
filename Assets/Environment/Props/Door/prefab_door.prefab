@@ -169,7 +169,7 @@ Transform:
   m_Children:
   - {fileID: 7782283710237450694}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &482996186702698289
 MonoBehaviour:
@@ -186,3 +186,5 @@ MonoBehaviour:
   shiftInX: 0
   gameStep: {fileID: 0}
   rooms: {fileID: 0}
+  audioManagerObject: {fileID: 0}
+  doorAudio: {fileID: 8300000, guid: 7b265d0c9f799584883b1ed23dce6ce1, type: 3}

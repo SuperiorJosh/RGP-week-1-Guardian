@@ -10,6 +10,17 @@ public class RoomTransition : MonoBehaviour
 
     // References
     [SerializeField] private GameObject rooms;
+    [SerializeField] private GameObject audioManagerObject;
+    private AudioManager audioManager;
+
+    // Audio clips
+    [SerializeField] AudioClip doorAudio;
+
+    // On awake
+    void OnAwake()
+    {
+        audioManager = audioManagerObject.GetComponent<AudioManager>();
+    }
 
     // Change Rooms
     public void ChangeRoom()
@@ -20,7 +31,7 @@ public class RoomTransition : MonoBehaviour
             Vector3 currentPosition = rooms.transform.position;
             rooms.transform.position = new Vector3(currentPosition.x + shiftInX, currentPosition.y, currentPosition.z);
 
-            Debug.Log("Room has shifted");
+            audioManager.Play(doorAudio);
         }
     }
 }
