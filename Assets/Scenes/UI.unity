@@ -2446,6 +2446,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7608472}
     m_Modifications:
+    - target: {fileID: 4391543036297668835, guid: d4d31011af90f104a8c0d3aede055d60,
+        type: 3}
+      propertyPath: pencilSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 45a6833362902ec488edb3f703049182, type: 3}
+    - target: {fileID: 4391543036297668835, guid: d4d31011af90f104a8c0d3aede055d60,
+        type: 3}
+      propertyPath: pencilSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: b81b6e8edd741ac4cb2bed3f91ccf265, type: 3}
+    - target: {fileID: 4391543036297668835, guid: d4d31011af90f104a8c0d3aede055d60,
+        type: 3}
+      propertyPath: pencilSound3
+      value: 
+      objectReference: {fileID: 8300000, guid: f56253b0829c11046b78d9235ac69b56, type: 3}
     - target: {fileID: 5483161085582603236, guid: d4d31011af90f104a8c0d3aede055d60,
         type: 3}
       propertyPath: m_Pivot.x

@@ -37,6 +37,12 @@ public class UIDialogue : MonoBehaviour
 
     private int m_npcDialogueCount;
     private int m_playerDialogueCount;
+
+    // Audio clips
+    [SerializeField] private AudioClip pencilSound1;
+    [SerializeField] private AudioClip pencilSound2;
+    [SerializeField] private AudioClip pencilSound3;
+    private int soundIndex = 0;
     
     [Serializable]
     public struct ActorDialoguePanel
@@ -183,6 +189,7 @@ public class UIDialogue : MonoBehaviour
                     Debug.Log("Something is null");
                 }
                 m_currentPanel.DialogueText.text = m_data.dialogueDataList[0].dialogueLine;
+                AudioManager.Instance.Play(CurrentSound());
             }))
             .Insert(0.2f, m_currentPanel.DialogueText.DOFade(1f, 0.2f));
         
@@ -286,11 +293,13 @@ public class UIDialogue : MonoBehaviour
                 
                 hideShowSequence.Play();
                 m_currentSpeaker = dialogue.Speaker;
+                AudioManager.Instance.Play(CurrentSound());
             }
             else
             {
                 m_currentPanel.SpeakerImage.sprite = dialogue.Speaker.GetEmotion(dialogue.Emotion);
                 m_currentPanel.DialogueText.text = dialogue.dialogueLine;
+                AudioManager.Instance.Play(CurrentSound());
             }
         }
     }
@@ -298,5 +307,22 @@ public class UIDialogue : MonoBehaviour
     public void NextLine()
     {
         ShowNext();
+    }
+
+    private AudioClip CurrentSound()
+    {
+        if (soundIndex == 0)
+        {
+            soundIndex = 1;
+            return pencilSound1;
+        }
+        else if (soundIndex == 1)
+        {
+            soundIndex = 2;
+            return pencilSound2;
+        }
+
+        soundIndex = 0;
+        return pencilSound3;
     }
 }

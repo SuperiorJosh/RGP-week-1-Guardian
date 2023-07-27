@@ -319,6 +319,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8754168955880025649, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 31a836612503cf04ba1ced8d7eaf79ba, type: 3}
     m_RemovedComponents:
     - {fileID: 18300704879850942, guid: 5abb4defa7a4af7478a99aea818b2d40, type: 3}
     m_RemovedGameObjects: []
@@ -1081,6 +1086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4822088578564890699, guid: ce3a691646c0e4c8c9ff8871c5862308,
         type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 31a836612503cf04ba1ced8d7eaf79ba, type: 3}
+    - target: {fileID: 4822088578564890699, guid: ce3a691646c0e4c8c9ff8871c5862308,
+        type: 3}
       propertyPath: requiredItemDataList.Array.data[0].gameStepEventToCheck
       value: 
       objectReference: {fileID: 11400000, guid: 64410903b5bece64589b09a797de8805,
@@ -1195,7 +1205,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameStep
       value: 
-      objectReference: {fileID: 11400000, guid: ba47b7382239649409a88e1913a76fbf,
+      objectReference: {fileID: 11400000, guid: f7b357f0cef328243ab24631d62961d0,
         type: 2}
     - target: {fileID: 7058277643622938105, guid: ce3a691646c0e4c8c9ff8871c5862308,
         type: 3}
@@ -1429,6 +1439,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5575769303985716414, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
+    - target: {fileID: 7353704131556736991, guid: af9b43dd49b064d3c86f818a16a8703f,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fa7ce81a81bf2c4cbb3a60bcec40d82, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1892,6 +1907,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 386983450}
+    - target: {fileID: 5760827748510229607, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
+        type: 3}
+      propertyPath: successSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 31a836612503cf04ba1ced8d7eaf79ba, type: 3}
     - target: {fileID: 7175543212744088182, guid: 4a3ff7bfc46f2404e815d1ba341dbfa6,
         type: 3}
       propertyPath: m_Name

@@ -30,6 +30,9 @@ public class PlayerInput : MonoBehaviour
 
     bool HasTalkedToTenant = false;
 
+    // Audio clips
+    [SerializeField] private AudioClip clickSound;
+
     private void Awake()
     {
         m_orbital = m_virtualCam.GetCinemachineComponent<CinemachineOrbitalTransposer>();
@@ -166,6 +169,7 @@ public class PlayerInput : MonoBehaviour
                     else if (hit.collider.GetComponentInParent<Interactable>())
                     {
                         hit.collider.GetComponentInParent<Interactable>().Interact(gameObject.GetComponent<PlayerData>().itemData);
+                        AudioManager.Instance.Play(clickSound);
                     }
                 }
             } 
