@@ -163,13 +163,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 3
   m_FollowOffset: {x: 0, y: 15, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
+  m_PitchDamping: 20
+  m_YawDamping: 20
+  m_RollDamping: 20
   m_AngularDamping: 0
   m_Heading:
     m_Definition: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
-    m_AccelTime: 0.1
+    m_MaxSpeed: 1000
+    m_AccelTime: 0.4
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
@@ -252,7 +252,7 @@ Transform:
   - {fileID: 2054861923315127850}
   - {fileID: 2630283338074827093}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7353704131556736991
 MonoBehaviour:
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_zoomSpeed: 1
   m_zoomSmoothTime: 0.2
   m_aimTarget: {fileID: 2630283338074827093}
-  m_panTarget: {fileID: 0}
+  m_panTarget: {fileID: 2630283338074827093}
   m_panSpeed: 0.5
 --- !u!114 &6829194915030660407
 MonoBehaviour:
@@ -485,8 +485,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0

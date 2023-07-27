@@ -16,6 +16,6 @@ public class DialogueSender : MonoBehaviour
     public void DeliverDialogue(DialogueData _dialogueData)
     {
         // TODO: Send data to dialogue canva manager.
-        DialogueManager.Instance.ProcessDialogue(_dialogueData);
+        UIManager.Instance.ProcessDialogue(_dialogueData);
     }
 }

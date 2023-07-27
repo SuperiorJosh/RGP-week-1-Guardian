@@ -90,6 +90,11 @@ public class PlayerInput : MonoBehaviour
         m_targetZoomDistance =
             Mathf.Clamp(m_targetZoomDistance, m_minOrtho, m_maxOrtho);
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            UIManager.Instance.
+        }
+
         if(Input.GetMouseButtonDown(2))
         {
             m_panTargetLastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -115,9 +120,9 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if(DialogueManager.Instance.IsUIShowing())
+            if(UIManager.Instance.IsUIShowing())
             {
-                DialogueManager.Instance.NextLine();
+                UIManager.Instance.NextLine();
             }
             else{
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class UIInventory : MonoBehaviour
 
     private UIInventoryIcon m_activeIcon;
     private UIInventoryIcon m_combineIcon;
+    private Vector2 m_startPosition;
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class UIInventory : MonoBehaviour
     {
         Inventory.Instance.ItemAdded.AddListener(OnInventoryItemAdded);
         Inventory.Instance.ItemRemoved.AddListener(OnInventoryItemRemoved);
+        m_startPosition = (transform as RectTransform).anchoredPosition;
     }
 
     private void OnInventoryItemAdded(ItemData itemData)
@@ -78,5 +81,17 @@ public class UIInventory : MonoBehaviour
             icon.OnClicked.RemoveListener(OnIconClicked);
             icon.Reset();
         }
+    }
+
+    public void Hide()
+    {
+        var rectTrans = GetComponent<RectTransform>();
+        rectTrans.DOAnchorPosY(-700f, .6f).SetEase(Ease.InOutQuad);
+    }
+
+    public void Show()
+    {
+        var rectTrans = GetComponent<RectTransform>();
+        rectTrans.DOAnchorPosY(m_startPosition.y, .4f).SetEase(Ease.InOutQuad);
     }
 }

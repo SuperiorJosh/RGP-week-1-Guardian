@@ -1270,36 +1270,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 697070354015636681, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_Antialiasing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 697070354015636681, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481371113781071754, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481371113781071754, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054861923315127850, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054861923315127850, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
     - target: {fileID: 3415806821386034840, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1355,36 +1325,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5356854256796789046, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_XDamping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356854256796789046, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_YDamping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356854256796789046, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_ZDamping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356854256796789046, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_YawDamping
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356854256796789046, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_RollDamping
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5356854256796789046, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_PitchDamping
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5481497873070049857, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
       propertyPath: m_Name
@@ -1396,17 +1336,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5575769303985716414, guid: af9b43dd49b064d3c86f818a16a8703f,
         type: 3}
-    - target: {fileID: 6829194915030660407, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_ghostVisionAvailableStepEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: cfe5c84cdbc17424ba4264fbb92d73a0,
-        type: 2}
-    - target: {fileID: 7353704131556736991, guid: af9b43dd49b064d3c86f818a16a8703f,
-        type: 3}
-      propertyPath: m_panTarget
-      value: 
-      objectReference: {fileID: 1915759768}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1461,12 +1390,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1915759768 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2630283338074827093, guid: af9b43dd49b064d3c86f818a16a8703f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1339550619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2060113641
 Mesh:
   m_ObjectHideFlags: 0
