@@ -44,11 +44,6 @@ public class GhostInteraction : MonoBehaviour
             GhostMovement(-7f, 1f);
             tenantInteraction.TenantMovement(-5f, 1f);
         }
-        else if (MugInteractionGameStep.CurrentState == GameStepEventState.NotStarted)
-        {
-            dialogueSender.DeliverDialogue(MugInteractionDialogue);
-            CompleteGameStep(MugInteractionGameStep);
-        }
     }
 
     public void CompleteGameStep(GameStepEvent currentGameStep)
