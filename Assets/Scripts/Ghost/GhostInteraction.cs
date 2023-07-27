@@ -17,11 +17,9 @@ public class GhostInteraction : MonoBehaviour
 
     // Game steps
     [SerializeField] GameStepEvent initialTalkGhostGameStep;
-    [SerializeField] GameStepEvent MugInteractionGameStep;
 
     // Dialogue data
     [SerializeField] DialogueData initialTalkGhostDialogue;
-    [SerializeField] DialogueData MugInteractionDialogue;
 
     // Bedroom position for Emma to flee to
     [SerializeField] GameObject Bedroom;
