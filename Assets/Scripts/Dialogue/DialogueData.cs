@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
@@ -6,6 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Dialogue Data", fileName = "Dialogue Data")]
 public class DialogueData : ScriptableObject
 {
+    [SerializeField] private bool m_repeats;
+    public bool DeliveredDialogue;
+
+    private void OnEnable()
+    {
+        DeliveredDialogue = false;
+    }
+
     [System.Serializable]
     public struct SpriteLinesPair
     {

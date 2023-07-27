@@ -20,6 +20,7 @@ public class UIInventoryIcon : MonoBehaviour, IPointerClickHandler, IPointerEnte
     private CanvasGroup m_canvasGroup;
 
     [FormerlySerializedAs("m_onClicked")] public UnityEvent<UIInventoryIcon> OnClicked;
+    [SerializeField] 
 
     private void Awake()
     {
@@ -39,7 +40,8 @@ public class UIInventoryIcon : MonoBehaviour, IPointerClickHandler, IPointerEnte
         m_iconImage.sprite = item.InventoryIcon;
         m_canvasGroup.alpha = 1f;
         m_active = false;
-        m_iconBgImage.DOFade(0f, 0f);
+        m_iconBgImage.color = new Color(m_iconBgImage.color.r, m_iconBgImage.color.g, m_iconBgImage.color.b, 0f);
+        m_iconBgImage.transform.localScale = Vector3.zero;
         m_canvasGroup.blocksRaycasts = true;
     }
 
@@ -53,15 +55,30 @@ public class UIInventoryIcon : MonoBehaviour, IPointerClickHandler, IPointerEnte
         m_active = false;
         m_canvasGroup.alpha = 0f;
         m_canvasGroup.blocksRaycasts = false;
+        m_iconBgImage.color = new Color(m_iconBgImage.color.r, m_iconBgImage.color.g, m_iconBgImage.color.b, 0f);
+        m_iconBgImage.transform.localScale = Vector3.zero;
         m_itemData = null;
+    }
+
+    public void ChangeActiveState(bool active)
+    {
+        m_active = active;
+        ShowHideActiveBg();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         m_active = !m_active;
-        var endVal = m_active ? 1f : 0f;
-        m_iconBgImage.DOFade(endVal, 0.2f);
+        ShowHideActiveBg();
         OnClicked?.Invoke(this);
+    }
+
+    private void ShowHideActiveBg()
+    {
+        var endVal = m_active ? 1f : 0f;
+        var endSize = m_active ? 1f : 0f;
+        m_iconBgImage.DOFade(endVal, 0.2f);
+        m_iconBgImage.transform.DOScale(endSize, 1.5f).SetEase(Ease.OutElastic);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

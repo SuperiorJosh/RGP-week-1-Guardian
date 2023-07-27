@@ -17,7 +17,7 @@ public class UISpiritVision : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private Sprite m_ghostVisionInactiveSprite;
     [SerializeField] private Vector2 m_hoverOffset;
 
-    private UnityEvent m_cursorExited;
+    private UnityEvent m_cursorExited = new();
     private bool m_active = false;
     public bool Active => m_active;
     private PlayerData m_playerData;
