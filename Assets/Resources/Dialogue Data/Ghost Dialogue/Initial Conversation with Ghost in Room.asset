@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
+  m_Name: Initial Conversation with Ghost in Room
+  m_EditorClassIdentifier: 
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "Emma\u2026"
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 1
+    dialogueLine: "*Hick*\u2026 *sniff*\u2026\u2026.."
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 1
+    dialogueLine: "I\u2026. *sniff*.. I\u2026 never got to have a birthday party\u2026..
+      *Hick*"
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 1
+    dialogueLine: I just wanted one last Birthday with everyone I love!!!
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: Emma.....
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: .......
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: "\u2026. A birthday you want\u2026."
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 6
+    dialogueLine: ..... A birthday you shall get!
