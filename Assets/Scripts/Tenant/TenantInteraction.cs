@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,7 @@ public class TenantInteraction : MonoBehaviour
     // References
     private Interactable interactableComponent;
     private DialogueSender dialogueSender;
+    private SpriteRenderer spriteRenderer;
 
     // Game steps
     [SerializeField] GameStepEvent initialTalkTenantGameStep;
@@ -32,6 +34,7 @@ public class TenantInteraction : MonoBehaviour
         interactableComponent.ItemInteraction.AddListener(OnInteract);
 
         dialogueSender = GetComponent<DialogueSender>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnInteract(ItemData itemData)
@@ -51,9 +54,9 @@ public class TenantInteraction : MonoBehaviour
         }
     }
 
-    public void CompleteGameStep(GameStepEvent currentGameStep)
+    public void CompleteGameStep(GameStepEvent _currentGameStep)
     {
-        currentGameStep.ChangeContext(GameStepEventState.Completed);
+        _currentGameStep.ChangeContext(GameStepEventState.Completed);
     }
 
     public void ActivateGhostVision()
@@ -61,5 +64,11 @@ public class TenantInteraction : MonoBehaviour
         //activateGhostVision?.Invoke();
         
         m_ghostVisionAvailableGameStep.ChangeContext(GameStepEventState.Completed);
+    }
+
+    private void TenantMovement(float _xPosition, float _zPosition)
+    {
+        spriteRenderer.DOFade(0f, 1f).OnComplete(() => { spriteRenderer.DOFade(1f, 1f); });
+        gameObject.transform.position = new Vector3(_xPosition, 1f, _zPosition);
     }
 }
