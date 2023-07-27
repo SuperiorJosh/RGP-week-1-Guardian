@@ -32,12 +32,13 @@ public class Usable : MonoBehaviour
         {
             foreach (ItemEventPair itemEventPair in requiredItemDataList)
             {
-                if (_clickedItem == itemEventPair.requiredItem && itemEventPair.gameStepEventToCheck.CurrentState != GameStepEventState.Completed)
-                {
-                    Debug.Log("Correct item used");
-                    (itemEventPair.usableEvent)?.Invoke(_clickedItem);
-                    return;
-                }
+                if (_clickedItem != itemEventPair.requiredItem) continue;
+                if (itemEventPair.gameStepEventToCheck == null) continue;
+                if (itemEventPair.gameStepEventToCheck.CurrentState == GameStepEventState.Completed) continue;
+                
+                Debug.Log("Correct item used");
+                (itemEventPair.usableEvent)?.Invoke(_clickedItem);
+                return;
             }
             Debug.Log("Item not usable on target");
         }
