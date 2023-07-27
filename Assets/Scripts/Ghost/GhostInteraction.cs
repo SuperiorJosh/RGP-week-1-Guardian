@@ -17,6 +17,7 @@ public class GhostInteraction : MonoBehaviour
 
     // Game steps
     [SerializeField] GameStepEvent initialTalkGhostGameStep;
+    [SerializeField] GameStepEvent MugInteractionGameStep;
 
     // Dialogue data
     [SerializeField] DialogueData initialTalkGhostDialogue;
