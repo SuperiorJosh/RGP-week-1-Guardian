@@ -90,8 +90,8 @@ MonoBehaviour:
     type: 2}
   initialTalkGhostDialogue: {fileID: 11400000, guid: 007c78922db829344892051e23b42595,
     type: 2}
-  MugInteractionDialogue: {fileID: 11400000, guid: 032513347880c874086bd8093980f099,
-    type: 2}
+  Bedroom: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1021326558578795281
 MonoBehaviour:
   m_ObjectHideFlags: 0
