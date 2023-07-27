@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
     
     [SerializeField] private UIDialogue m_dialogueBox;
+    [SerializeField] private UIAltTextBox m_altTextBox;
 
     DialogueData dialogueReceived;    
 
@@ -25,6 +28,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void ShowAltText(string text, Transform target, Vector3 offset, bool uiTarget, UnityEvent hideEvent)
+    {
+        m_altTextBox.Show(text, target, offset, false, hideEvent);
+    }
+    
     public void ProcessDialogue(DialogueData _dialogueReceived)
     {
         if (_dialogueReceived.dialogueDataList.Count == 0)

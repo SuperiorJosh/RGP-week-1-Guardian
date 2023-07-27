@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 7255079733635530399}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2987975040495799064
 MonoBehaviour:
@@ -119,7 +119,8 @@ MonoBehaviour:
           m_MethodName: DeliverDialogue
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgument: {fileID: 11400000, guid: 81f4fb818aa02094c985cb3436d7f606,
+              type: 2}
             m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -208,9 +209,8 @@ MonoBehaviour:
     type: 2}
   familyPhotoFixedGameStep: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4,
     type: 2}
-  intialTalkGhostGameStep: {fileID: 11400000, guid: f7b357f0cef328243ab24631d62961d0,
+  m_ghostVisionAvailableGameStep: {fileID: 11400000, guid: cfe5c84cdbc17424ba4264fbb92d73a0,
     type: 2}
-  m_ghostVisionAvailableGameStep: {fileID: 0}
   initialTalkDialogue: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e,
     type: 2}
   afterInitialTalkDialogue: {fileID: 11400000, guid: ff749f8646a91064d8cc44ac0cce14e2,
@@ -240,8 +240,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.0018187, y: 9.85478, z: 1.2800461}
-  m_Center: {x: -0.0709033, y: 4.427388, z: -0.14002293}
+  m_Size: {x: 3.0018187, y: 9.85478, z: 2.57}
+  m_Center: {x: -0.0709033, y: 0.23, z: -0.14002293}
 --- !u!1 &7546675721078097383
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7255079733635530399}
   - component: {fileID: 1521486600044627129}
+  - component: {fileID: 5464863119688981474}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -266,14 +267,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7546675721078097383}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7202410751799439040}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!212 &1521486600044627129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -326,3 +327,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5464863119688981474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546675721078097383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14471a38069a7441902ff9ea7ce321c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}

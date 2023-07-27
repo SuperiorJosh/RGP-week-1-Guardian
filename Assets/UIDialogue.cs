@@ -48,6 +48,8 @@ public class UIDialogue : MonoBehaviour
     }
     
     public bool IsActive => m_data != null;
+
+    private Sequence m_currentSequence;
     
     private void Awake()
     {
@@ -114,6 +116,14 @@ public class UIDialogue : MonoBehaviour
 
     void ShowSequence(ActorDialoguePanel actorDialoguePanel)
     {
+        if (m_currentSequence != null)
+        {
+            if (m_currentSequence.IsPlaying())
+            {
+                m_currentSequence.Goto(m_currentSequence.Duration(), true);
+            }
+        }
+        
         var showOtherDialogue = true;
         if (actorDialoguePanel.Equals(m_playerDialogue))
         {
@@ -159,6 +169,10 @@ public class UIDialogue : MonoBehaviour
             .Insert(0.1f, m_currentPanel.SpeakerImage.transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f))
             .Insert(0.1f, m_currentPanel.DialoguePanel.DOScale(new Vector3(1f, 1f, 1f), 0.5f).OnComplete(() =>
             {
+                if (m_currentPanel.Equals(default(ActorDialoguePanel)) || m_data == null)
+                {
+                    Debug.Log("Something is null");
+                }
                 m_currentPanel.DialogueText.text = m_data.dialogueDataList[0].dialogueLine;
             }))
             .Insert(0.2f, m_currentPanel.DialogueText.DOFade(1f, 0.2f));
@@ -177,32 +191,38 @@ public class UIDialogue : MonoBehaviour
     {
         
     }
+
+    void Hide()
+    {
+        // hide the dialogue
+        m_currentSequence = DOTween.Sequence();
+        m_currentSequence
+            .Insert(0f, m_canvasGroup.DOFade(0f, 0.3f))
+            .Insert(0.1f, m_currentPanel.SpeakerImage.transform.DOScale(0f, 0.2f))
+            .Insert(0.1f, m_currentPanel.DialoguePanel.DOScale(0f,0.2f))
+            .Insert(0.2f, m_currentPanel.DialogueText.DOFade(0f, 0.2f))
+            .Insert(0.3f, m_otherPanel.SpeakerImage.transform.DOScale(0F, 0.2f))
+            .Insert(0.3f, m_otherPanel.DialoguePanel.DOScale(0f, 0.5f))
+            .Insert(0.4f, m_otherPanel.DialogueText.DOFade(0f, 0.2f));
+        m_currentSequence.OnComplete(() =>
+        {
+            m_canvasGroup.alpha = 0;
+            m_canvasGroup.blocksRaycasts = false;
+            m_data = null;
+            DialogueFinished?.Invoke();
+            m_npcDialogue.DialogueText.text = "";
+            m_playerDialogue.DialogueText.text = "";
+            m_currentSequence = null;
+        });
+        m_currentSequence.Play();
+    }
     
     private void ShowNext()
     {
         dialogueIndex++;
         if (dialogueIndex >= m_data.dialogueDataList.Count)
         {
-            // hide the dialogue
-            var sequence = DOTween.Sequence();
-            sequence
-                .Insert(0f, m_canvasGroup.DOFade(0f, 0.3f))
-                .Insert(0.1f, m_currentPanel.SpeakerImage.transform.DOScale(0f, 0.2f))
-                .Insert(0.1f, m_currentPanel.DialoguePanel.DOScale(0f,0.2f))
-                .Insert(0.2f, m_currentPanel.DialogueText.DOFade(0f, 0.2f))
-                .Insert(0.3f, m_otherPanel.SpeakerImage.transform.DOScale(0F, 0.2f))
-                .Insert(0.3f, m_otherPanel.DialoguePanel.DOScale(0f, 0.5f))
-                .Insert(0.4f, m_otherPanel.DialogueText.DOFade(0f, 0.2f));
-            sequence.OnComplete(() =>
-            {
-                m_canvasGroup.alpha = 0;
-                m_canvasGroup.blocksRaycasts = false;
-                m_data = null;
-                DialogueFinished?.Invoke();
-                m_npcDialogue.DialogueText.text = "";
-                m_playerDialogue.DialogueText.text = "";
-            });
-            sequence.Play();
+            Hide();
         }
         else
         {

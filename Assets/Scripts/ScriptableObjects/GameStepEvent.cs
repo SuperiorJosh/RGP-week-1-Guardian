@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,12 @@ public class GameStepEvent : ScriptableObject
         m_prevState = m_currentState;
         m_currentState = state;
         StepEventChanged?.Invoke(this);
+    }
+
+    [Button]
+    public static void InvokeGameStep(GameStepEvent stepEvent)
+    {
+        stepEvent.ChangeContext(GameStepEventState.Completed);
     }
 }
 
