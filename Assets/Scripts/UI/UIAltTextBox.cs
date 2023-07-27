@@ -37,9 +37,12 @@ public class UIAltTextBox : MonoBehaviour
         }
 
         var rectTrans = transform as RectTransform;
-        rectTrans.anchoredPosition = new Vector3(pos.x + offset.x, pos.y + offset.y);
+        var endPos = new Vector3(pos.x + offset.x, pos.y + offset.y, 0f);
+        var startPos = new Vector3(endPos.x, endPos.y - 50f, 0f);
+        rectTrans.anchoredPosition = startPos; 
         m_text.text = text;
-        m_canvasGroup.DOFade(1f, 1f);
+        m_canvasGroup.DOFade(1f, .5f);
+        rectTrans.DOAnchorPosY(endPos.y, .5f);
 
         if (hideEvent != null)
         {
@@ -52,7 +55,7 @@ public class UIAltTextBox : MonoBehaviour
     {
         m_hideEvent.RemoveListener(OnHideEvent);
         m_text.text = "";
-        m_canvasGroup.DOFade(0f, 1f);
+        m_canvasGroup.DOFade(0f, .5f);
     }
 
     private void Update()

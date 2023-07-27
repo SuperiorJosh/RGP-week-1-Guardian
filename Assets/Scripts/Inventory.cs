@@ -76,4 +76,16 @@ public class Inventory : MonoBehaviour
         return combination;
 
     }
+
+    public bool HasItem(ItemData itemData)
+    {
+        var data = itemData.IsInstance ? itemData.OriginalRef : itemData;
+        bool found = false;
+        foreach (var item in m_items.Where(item => item.IsInstance).Where(item => item.OriginalRef == data))
+        {
+            found = true;
+        }
+
+        return found;
+    }
 }
