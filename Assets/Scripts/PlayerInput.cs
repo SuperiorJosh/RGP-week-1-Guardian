@@ -90,7 +90,6 @@ public class PlayerInput : MonoBehaviour
         m_targetZoomDistance =
             Mathf.Clamp(m_targetZoomDistance, m_minOrtho, m_maxOrtho);
 
-        
         if(Input.GetMouseButtonDown(2))
         {
             m_panTargetLastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -102,8 +101,12 @@ public class PlayerInput : MonoBehaviour
             mouseDelta *= m_panSpeed;
             m_panTarget.Translate(mouseDelta.x, 0, mouseDelta.z);
             m_panTargetLastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
+            var position = m_panTarget.position;
+            position.x = Mathf.Clamp(position.x, -2.5f, 2.5f);
+            position.z = Mathf.Clamp(position.z, -2.5f, 2.5f);
+            m_panTarget.position = position;
         }
+
         else{
              m_virtualCam.LookAt = m_aimTarget;
              m_panTarget.position = m_aimTarget.position;
