@@ -30,6 +30,9 @@ public class PlayerInput : MonoBehaviour
 
     bool HasTalkedToTenant = false;
 
+    // Audio clips
+    [SerializeField] private AudioClip clickSound;
+
     private void Awake()
     {
         m_orbital = m_virtualCam.GetCinemachineComponent<CinemachineOrbitalTransposer>();
@@ -90,12 +93,25 @@ public class PlayerInput : MonoBehaviour
         m_targetZoomDistance =
             Mathf.Clamp(m_targetZoomDistance, m_minOrtho, m_maxOrtho);
 
+        Ray alwaysRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
         if (Input.GetMouseButtonDown(1))
         {
             UIManager.Instance.Cursor.OverrideCursor(Cursors.Rotate);
         } else if (Input.GetMouseButtonUp(1))
         {
             UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
+        } else 
+        if (Physics.Raycast(alwaysRay, out RaycastHit hit2))
+        {
+            if (hit2.collider.GetComponentInParent<Interactable>())
+            {
+                UIManager.Instance.Cursor.OverrideCursor(Cursors.Speak);
+            }
+            else
+            {
+                UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
+            }
         }
         
 
@@ -120,7 +136,6 @@ public class PlayerInput : MonoBehaviour
              m_virtualCam.LookAt = m_aimTarget;
              m_panTarget.position = m_aimTarget.position;
         }
-
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -166,6 +181,7 @@ public class PlayerInput : MonoBehaviour
                     else if (hit.collider.GetComponentInParent<Interactable>())
                     {
                         hit.collider.GetComponentInParent<Interactable>().Interact(gameObject.GetComponent<PlayerData>().itemData);
+                        AudioManager.Instance.Play(clickSound);
                     }
                 }
             } 

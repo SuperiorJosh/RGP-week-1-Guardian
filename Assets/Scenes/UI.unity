@@ -2284,9 +2284,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.553223, y: -40.741913}
+  m_AnchoredPosition: {x: 36.553223, y: -40.741943}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!222 &2079770720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2312,8 +2312,6 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 21300000, guid: 9f4858606bce847418de81db8d275e28, type: 3}
-    - {fileID: 21300000, guid: 6ecffba74a1be4141b667c6303f5cc91, type: 3}
-    - {fileID: 21300000, guid: 3b6678b83a5814cc3911d91b4ae2344e, type: 3}
     - {fileID: 21300000, guid: b86d8e179f4314932bcc18eaa00c0697, type: 3}
     - {fileID: 21300000, guid: 36e5bd76f3e514d7896f82634dc2b88a, type: 3}
     SerializedBytesString: 
@@ -2323,8 +2321,8 @@ MonoBehaviour:
     SerializationNodes:
     - Name: CursorSprites
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Cursors, Assembly-CSharp],[UnityEngine.Sprite,
-        UnityEngine.CoreModule]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[Cursors, Assembly-CSharp],[CursorSprite,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Cursors, Assembly-CSharp]],
@@ -2340,7 +2338,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -2348,32 +2346,26 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: $v
+      Entry: 7
+      Data: 2|CursorSprite, Assembly-CSharp
+    - Name: Sprite
       Entry: 10
       Data: 0
+    - Name: Offset
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.1764044
+    - Name: 
+      Entry: 4
+      Data: 0.879873
     - Name: 
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 10
-      Data: 1
-    - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 10
-      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -2384,8 +2376,26 @@ MonoBehaviour:
       Entry: 3
       Data: 3
     - Name: $v
+      Entry: 7
+      Data: 3|CursorSprite, Assembly-CSharp
+    - Name: Sprite
       Entry: 10
-      Data: 3
+      Data: 1
+    - Name: Offset
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.5000001
+    - Name: 
+      Entry: 4
+      Data: 0.3331776
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2396,8 +2406,26 @@ MonoBehaviour:
       Entry: 3
       Data: 4
     - Name: $v
+      Entry: 7
+      Data: 4|CursorSprite, Assembly-CSharp
+    - Name: Sprite
       Entry: 10
-      Data: 4
+      Data: 2
+    - Name: Offset
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2428,7 +2456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f4858606bce847418de81db8d275e28, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ecffba74a1be4141b667c6303f5cc91, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2446,6 +2474,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7608472}
     m_Modifications:
+    - target: {fileID: 4391543036297668835, guid: d4d31011af90f104a8c0d3aede055d60,
+        type: 3}
+      propertyPath: pencilSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 45a6833362902ec488edb3f703049182, type: 3}
+    - target: {fileID: 4391543036297668835, guid: d4d31011af90f104a8c0d3aede055d60,
+        type: 3}
+      propertyPath: pencilSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: b81b6e8edd741ac4cb2bed3f91ccf265, type: 3}
+    - target: {fileID: 4391543036297668835, guid: d4d31011af90f104a8c0d3aede055d60,
+        type: 3}
+      propertyPath: pencilSound3
+      value: 
+      objectReference: {fileID: 8300000, guid: f56253b0829c11046b78d9235ac69b56, type: 3}
     - target: {fileID: 5483161085582603236, guid: d4d31011af90f104a8c0d3aede055d60,
         type: 3}
       propertyPath: m_Pivot.x

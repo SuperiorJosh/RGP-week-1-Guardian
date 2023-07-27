@@ -11,6 +11,9 @@ public class Usable : MonoBehaviour
     //[SerializeField] ItemData requiredItemData;
     //public UnityEvent<ItemData> usableEvent; // Unity event for when usable is successful.
 
+    // Audio clip
+    [SerializeField] private AudioClip successSound;
+
     [System.Serializable]
     public struct ItemEventPair
     {
@@ -38,6 +41,7 @@ public class Usable : MonoBehaviour
                 
                 Debug.Log("Correct item used");
                 (itemEventPair.usableEvent)?.Invoke(_clickedItem);
+                AudioManager.Instance.Play(successSound);
                 return;
             }
             Debug.Log("Item not usable on target");
