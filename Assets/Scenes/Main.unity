@@ -329,6 +329,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8754168955880025649, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[0].usableEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754168955880025649, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[0].usableEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754168955880025649, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[0].usableEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754168955880025649, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: requiredItemDataList.Array.data[0].usableEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GhostInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 18300704879850942, guid: 5abb4defa7a4af7478a99aea818b2d40, type: 3}
     m_RemovedGameObjects: []

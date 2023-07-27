@@ -92,7 +92,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            UIManager.Instance.
+            //UIManager.Instance.
         }
 
         if(Input.GetMouseButtonDown(2))
