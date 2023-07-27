@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
+  m_Name: Convincing tenant to party
+  m_EditorClassIdentifier: 
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 4
+    dialogueLine: All done!
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: "Now I just need to bring the family back together\u2026. "
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: There can only be one person in the world who can do that.
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: "What are you doing to the dining table\u2026?"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: "So\u2026. Theres something I need you to know."
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: Emma... The reason why shes sad is because her familys' not here...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "shes upset that she was never able to celebrate her birthday\u2026"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: "The only way to make her smile again is to throw her a birthday
+      party in this house\u2026"
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: "Really..? Thats it\u2026?"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: "Well the other thing is that we need everyone here\u2026"
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: "Everyone\u2026?"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "Yeah\u2026. you\u2026 your wife\u2026 your son\u2026."
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: "I..... I dont know if I can do that\u2026."
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 3
+    dialogueLine: "My wife would never want to come back to this house with awful
+      memories\u2026 she would never want to see my face\u2026."
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: "and our son\u2026 He would suffocate in this depressing atmosphere\u2026"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 5
+    dialogueLine: Mr.Smith .... You need to stop beating yourself up!
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 5
+    dialogueLine: Its not your fault the Emma died! you didnt kill her!
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "Its the driver who murdered her\u2026 not you!"
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: "But\u2026 but\u2026!"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "Emma is not mad at you\u2026. Shes mad at herself for making you
+      blame yourself\u2026"
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 5
+    dialogueLine: "and the only way for everything\u2026 everyone to be happy is
+      to forgive yourself\u2026"
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: "But my wife wont understand this\u2026. whole\u2026. soul thing\u2026."
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 5
+    dialogueLine: She doesn't need to. she just needs to understand YOU.
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "Call them\u2026 don't apologize to them\u2026."
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: "stop apologizing to Emma\u2026"
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 1
+    dialogueLine: "Dad\u2026 you didnt do anything wrong\u2026"
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: Emma!
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 1
+    dialogueLine: "I just want to see everyone again\u2026 happy\u2026 warm\u2026.
+      safe\u2026."
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: "Emma\u2026."
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: "im so sor-  no\u2026. I\u2019ll stop apologizing."
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: "okay\u2026 I\u2019ll do my best to bring everyone back together."
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 4
+    dialogueLine: "tha\u2026nk\u2026 you\u2026."
