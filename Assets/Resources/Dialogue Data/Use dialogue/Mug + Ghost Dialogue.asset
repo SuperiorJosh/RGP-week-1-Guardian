@@ -57,10 +57,10 @@ MonoBehaviour:
     dialogueLine: Are you upset because it's your birthday today and your family
       is not home...?
   - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
-    Emotion: 1
+    Emotion: 2
     dialogueLine: .........
   - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
-    Emotion: 1
+    Emotion: 3
     dialogueLine: Y...Ye...s...
   - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
     Emotion: 0
