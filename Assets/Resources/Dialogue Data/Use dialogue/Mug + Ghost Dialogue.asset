@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
   m_Name: Mug + Ghost Dialogue
   m_EditorClassIdentifier: 
+  m_repeats: 0
+  DeliveredDialogue: 0
   dialogueDataList:
   - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
     Emotion: 0
@@ -33,3 +35,33 @@ MonoBehaviour:
     Emotion: 2
     dialogueLine: I- I don't know why I'm telling you this... It felt like someone
       was asking...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: So, it seems like the son and wife have been absent from this house
+      for a while
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: Considering the timing of everything, it looks like this might
+      be part of what triggered Emma to act up...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: That can't be the only reason, can it?
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: Maybe it's time to ask Emma a question.
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: '*EHEM* Emma...'
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: Are you upset because it's your birthday today and your family
+      is not home...?
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 2
+    dialogueLine: .........
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 3
+    dialogueLine: Y...Ye...s...
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: You must miss your family...
