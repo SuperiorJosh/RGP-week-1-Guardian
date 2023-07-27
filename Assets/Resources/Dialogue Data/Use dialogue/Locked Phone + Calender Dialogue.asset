@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
+  m_Name: Locked Phone + Calender Dialogue
+  m_EditorClassIdentifier: 
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 3
+    dialogueLine: Huh? This calendar is from last year
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: That means today is Emma's birthday... or it would have been
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: I wonder if this date could be the phone password?
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 6
+    dialogueLine: Yes! I'm in
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: Looks like there is a message from his son Tom
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 1
+    dialogueLine: Sounds like he hasn't been home much lately... definitely some
+      tension within the family
+  - Speaker: {fileID: 11400000, guid: 22dc18da33009ca4aa33a57845656913, type: 2}
+    Emotion: 0
+    dialogueLine: Maybe that has something to do with Emma's soul remaining here

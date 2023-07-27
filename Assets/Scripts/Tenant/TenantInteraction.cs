@@ -23,6 +23,7 @@ public class TenantInteraction : MonoBehaviour
     [SerializeField] DialogueData initialTalkDialogue;
     [SerializeField] DialogueData afterInitialTalkDialogue;
     [SerializeField] DialogueData afterPhotoFixedDialogue;
+    [SerializeField] DialogueData afterGhostTalkDialogue;
 
     // Unity Event
     public UnityEvent activateGhostVision;
@@ -43,6 +44,10 @@ public class TenantInteraction : MonoBehaviour
         {
             dialogueSender.DeliverDialogue(initialTalkDialogue);
             CompleteGameStep(initialTalkTenantGameStep);
+        }
+        else if (intialTalkGhostGameStep.CurrentState == GameStepEventState.Completed)
+        {
+            dialogueSender.DeliverDialogue(afterGhostTalkDialogue);
         }
         else if (familyPhotoFixedGameStep.CurrentState == GameStepEventState.Completed)
         {
@@ -66,7 +71,7 @@ public class TenantInteraction : MonoBehaviour
         m_ghostVisionAvailableGameStep.ChangeContext(GameStepEventState.Completed);
     }
 
-    private void TenantMovement(float _xPosition, float _zPosition)
+    public void TenantMovement(float _xPosition, float _zPosition)
     {
         spriteRenderer.DOFade(0f, 1f).OnComplete(() => { spriteRenderer.DOFade(1f, 1f); });
         gameObject.transform.position = new Vector3(_xPosition, 1f, _zPosition);

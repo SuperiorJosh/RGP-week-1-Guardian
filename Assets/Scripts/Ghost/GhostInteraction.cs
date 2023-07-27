@@ -12,6 +12,8 @@ public class GhostInteraction : MonoBehaviour
     private Interactable interactableComponent;
     private DialogueSender dialogueSender;
     private SpriteRenderer spriteRenderer;
+    private TenantInteraction tenantInteraction;
+    [SerializeField] private GameObject tenant;
 
     // Game steps
     [SerializeField] GameStepEvent initialTalkGhostGameStep;
@@ -27,12 +29,16 @@ public class GhostInteraction : MonoBehaviour
 
         dialogueSender = GetComponent<DialogueSender>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        tenantInteraction = tenant.GetComponent<TenantInteraction>();
     }
 
     private void OnInteract(ItemData itemData)
     {
         dialogueSender.DeliverDialogue(initialTalkGhostDialogue);
         CompleteGameStep(initialTalkGhostGameStep);
+        GhostMovement(-7f, 1f);
+        tenantInteraction.TenantMovement(-5f, 1f);
     }
 
     public void CompleteGameStep(GameStepEvent currentGameStep)
@@ -40,10 +46,9 @@ public class GhostInteraction : MonoBehaviour
         currentGameStep.ChangeContext(GameStepEventState.Completed);
     }
 
-    private void GhostMovement(Vector3 _position)
+    public void GhostMovement(float _xPosition, float _zPosition)
     {
-        spriteRenderer.DOFade(0f, 1f);
-        gameObject.transform.position = _position;
-        spriteRenderer.DOFade(0.2f, 1f);
+        spriteRenderer.DOFade(0f, 1f).OnComplete(() => { spriteRenderer.DOFade(1f, 1f); });
+        gameObject.transform.position = new Vector3(_xPosition, 1f, _zPosition);
     }
 }

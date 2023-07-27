@@ -5,30 +5,22 @@ using UnityEngine;
 public class RoomTransition : MonoBehaviour
 {
     // Variables
-    [SerializeField] private Vector3 newPosition;
-    [SerializeField] private Quaternion newRotation;
+    [SerializeField] private float shiftInX;
     [SerializeField] GameStepEvent gameStep;
 
     // References
-    private GameObject mainCamera;
-
-    // On start
-    private void Start()
-    {
-        // Expensive call but should suffice for basic prototype
-        mainCamera = GameObject.Find("Main Camera");
-    }
+    [SerializeField] private GameObject rooms;
 
     // Change Rooms
     public void ChangeRoom()
     {
         // Check game state here, is it valid to swap rooms yet?
-        if(gameStep.CurrentState != GameStepEventState.Completed)
+        if(gameStep.CurrentState == GameStepEventState.Completed)
         {
-            return;
-        }
+            Vector3 currentPosition = rooms.transform.position;
+            rooms.transform.position = new Vector3(currentPosition.x + shiftInX, currentPosition.y, currentPosition.z);
 
-        mainCamera.transform.position = newPosition;
-        mainCamera.transform.rotation = newRotation;
+            Debug.Log("Room has shifted");
+        }
     }
 }

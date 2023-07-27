@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5452859726844723660}
   - component: {fileID: 4249389590881365193}
   - component: {fileID: 5481320621155202170}
+  - component: {fileID: 2000942630303352953}
   m_Layer: 0
   m_Name: smartphone
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2000942630303352953
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785180952880932095}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5462405274324140715, guid: a7fbb55c60a9c40958df001bbc1d6bb1, type: 3}
 --- !u!1 &4477307527062713927
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +115,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3848686340047711485}
+  - component: {fileID: 6657168725109726289}
+  - component: {fileID: 6784744751586725914}
+  - component: {fileID: 8994609138698981761}
   m_Layer: 0
   m_Name: smartphone
   m_TagString: Untagged
@@ -115,6 +141,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 44.192, y: 144.661, z: -26.301}
+--- !u!114 &6657168725109726289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477307527062713927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3477f123798b25f4cb4badfec05c6f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6784744751586725914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477307527062713927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c609469992b12af43b3c849d2a2c287f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 7ee823b221c7464439f47bd5a848284c, type: 2}
+  eventOnPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8994609138698981761}
+        m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
+        m_MethodName: DeliverDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 35f0899735365324098ddf55c766639f,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8994609138698981761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4477307527062713927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2418d5c60b8cbb439882c58aceb8313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4947618607369188993
 GameObject:
   m_ObjectHideFlags: 0

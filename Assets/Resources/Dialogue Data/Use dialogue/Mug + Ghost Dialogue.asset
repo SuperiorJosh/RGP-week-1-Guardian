@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6994f60fd3d47be876b4401aa6e0fe, type: 3}
+  m_Name: Mug + Ghost Dialogue
+  m_EditorClassIdentifier: 
+  dialogueDataList:
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 0
+    dialogueLine: That mug... Where...
+  - Speaker: {fileID: 11400000, guid: 483556e19d5b088498754a0bf4d264e8, type: 2}
+    Emotion: 0
+    dialogueLine: Where's mommy...?
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 0
+    dialogueLine: My wife... she- she used to use that mug all the time
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: Ever since Emma died she... she avoids anything that reminds her
+      of Emma...
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 1
+    dialogueLine: And that includes me... I think she blames me for Emma's death
+  - Speaker: {fileID: 11400000, guid: 8ab54eb2363f245e6b0ac9e065f268ac, type: 2}
+    Emotion: 2
+    dialogueLine: I- I don't know why I'm telling you this... It felt like someone
+      was asking...

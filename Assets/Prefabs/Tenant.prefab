@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 7255079733635530399}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2987975040495799064
 MonoBehaviour:
@@ -68,6 +68,8 @@ MonoBehaviour:
   requiresItem: 1
   requiredItemDataList:
   - requiredItem: {fileID: 11400000, guid: 56565228a5fa57b45a3e07e5ffa163c5, type: 2}
+    gameStepEventToCheck: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4,
+      type: 2}
     usableEvent:
       m_PersistentCalls:
         m_Calls:
@@ -111,6 +113,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - requiredItem: {fileID: 11400000, guid: 7f4c94fdc2f70344a9fc14f9f7075e26, type: 2}
+    gameStepEventToCheck: {fileID: 11400000, guid: c5c3d9acee01c314095513dcd00f46cc,
+      type: 2}
     usableEvent:
       m_PersistentCalls:
         m_Calls:
@@ -147,23 +151,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - requiredItem: {fileID: 11400000, guid: 5dc8eb9ad75fa924b996aefbc59ee22c, type: 2}
-    usableEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8684308887568082081}
-          m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
-          m_MethodName: DeliverDialogue
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 81f4fb818aa02094c985cb3436d7f606,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -209,6 +196,8 @@ MonoBehaviour:
     type: 2}
   familyPhotoFixedGameStep: {fileID: 11400000, guid: d7b1943e2e5770544a89c85a8e1685a4,
     type: 2}
+  intialTalkGhostGameStep: {fileID: 11400000, guid: f7b357f0cef328243ab24631d62961d0,
+    type: 2}
   m_ghostVisionAvailableGameStep: {fileID: 11400000, guid: cfe5c84cdbc17424ba4264fbb92d73a0,
     type: 2}
   initialTalkDialogue: {fileID: 11400000, guid: 89b5656323a086b4b9d0d3ea4139714e,
@@ -217,7 +206,8 @@ MonoBehaviour:
     type: 2}
   afterPhotoFixedDialogue: {fileID: 11400000, guid: 725f5b19253775c4c9aaf16d7a28deed,
     type: 2}
-  testDialogue: {fileID: 11400000, guid: 9dfd7b0dabfff05449c3a4159adf57c3, type: 2}
+  afterGhostTalkDialogue: {fileID: 11400000, guid: c2237d5b2b126b5418b6c2783907381d,
+    type: 2}
   activateGhostVision:
     m_PersistentCalls:
       m_Calls: []

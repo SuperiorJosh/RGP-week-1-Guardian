@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5836877943816697509}
   - component: {fileID: 2441143763205292549}
   - component: {fileID: 5026566043725508072}
+  - component: {fileID: 9079514924774374361}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9079514924774374361
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653671065469422180}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: e7f4f4322bd1e4271b09d9466295750b, type: 3}
 --- !u!1 &2612793136494575761
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4629936394652836173}
+  - component: {fileID: 482996186702698289}
   m_Layer: 0
   m_Name: prefab_door
   m_TagString: Untagged
@@ -147,3 +171,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &482996186702698289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407422590704630775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ea27ec395555a47950c8fb33f05549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shiftInX: 0
+  gameStep: {fileID: 0}
+  rooms: {fileID: 0}

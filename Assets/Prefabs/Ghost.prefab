@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1021326558578795281}
   - component: {fileID: 7792993195066227375}
   - component: {fileID: 1957332998810018324}
+  - component: {fileID: 8754168955880025649}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 4087979278950789063}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &-6220572127488094560
 BoxCollider:
@@ -83,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a414074ed90fa540956535004563777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tenant: {fileID: 0}
   initialTalkGhostGameStep: {fileID: 11400000, guid: f7b357f0cef328243ab24631d62961d0,
     type: 2}
   initialTalkGhostDialogue: {fileID: 11400000, guid: 007c78922db829344892051e23b42595,
@@ -126,6 +128,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2418d5c60b8cbb439882c58aceb8313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8754168955880025649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6222787422584327314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666fc32ffae23dd42b57863e1011f609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresItem: 1
+  requiredItemDataList:
+  - requiredItem: {fileID: 11400000, guid: be2e15fb7d8334541bd7137a8994c113, type: 2}
+    gameStepEventToCheck: {fileID: 11400000, guid: 4f206462c0d8e2245a59204101c74d46,
+      type: 2}
+    usableEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1957332998810018324}
+          m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
+          m_MethodName: DeliverDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 032513347880c874086bd8093980f099,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4327035432206495279}
+          m_TargetAssemblyTypeName: GhostInteraction, Assembly-CSharp
+          m_MethodName: CompleteGameStep
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 4f206462c0d8e2245a59204101c74d46,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: GameStepEvent, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8140349609175862903
 GameObject:
   m_ObjectHideFlags: 0

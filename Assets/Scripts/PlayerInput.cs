@@ -150,9 +150,9 @@ public class PlayerInput : MonoBehaviour
                         }
                         InteractionManager.Instance.useButtonClicked = false;
                     }
-                    else if (hit.collider.GetComponent<RoomTransition>())
+                    else if (hit.collider.GetComponentInParent<RoomTransition>())
                     {
-                        hit.collider.GetComponent<RoomTransition>().ChangeRoom();
+                        hit.collider.GetComponentInParent<RoomTransition>().ChangeRoom();
                     }
                     else if (hit.collider.GetComponentInParent<Interactable>())
                     {

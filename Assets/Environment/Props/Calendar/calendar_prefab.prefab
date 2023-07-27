@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8654205527394267677}
   - component: {fileID: 5880853691489328244}
   - component: {fileID: 4297944297005332382}
+  - component: {fileID: 5417940480982025602}
   m_Layer: 0
   m_Name: calendar
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5417940480982025602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544457529941822591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -710839993650233000, guid: 0a3c7476596254c0c90b6ebb54d9ed7e, type: 3}
 --- !u!1 &2309243009391462932
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3118677753199939758}
+  - component: {fileID: 3494790386288107999}
+  - component: {fileID: 5694837106335862997}
+  - component: {fileID: 805540288969248331}
+  - component: {fileID: 3889358077511763609}
   m_Layer: 0
   m_Name: calendar_prefab
   m_TagString: Untagged
@@ -113,5 +140,75 @@ Transform:
   m_Children:
   - {fileID: 8654205527394267677}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3494790386288107999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309243009391462932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3477f123798b25f4cb4badfec05c6f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5694837106335862997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309243009391462932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666fc32ffae23dd42b57863e1011f609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiresItem: 1
+  requiredItemDataList:
+  - requiredItem: {fileID: 11400000, guid: 7ee823b221c7464439f47bd5a848284c, type: 2}
+    usableEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 805540288969248331}
+          m_TargetAssemblyTypeName: DialogueSender, Assembly-CSharp
+          m_MethodName: DeliverDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: f50f530ad79a9554287bb855ceb61364,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &805540288969248331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309243009391462932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2418d5c60b8cbb439882c58aceb8313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3889358077511763609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309243009391462932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c178c4c45d1a2274896ddb533b7015da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
