@@ -13,7 +13,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private UIDialogue m_dialogueBox;
     [SerializeField] private UIAltTextBox m_altTextBox;
     [SerializeField] private UIInventory m_inventory;
+    [SerializeField] private PlayerCursor m_cursor;
 
+    public PlayerCursor Cursor => m_cursor;
+    
     private bool m_showHud = true;
 
     DialogueData dialogueReceived;    

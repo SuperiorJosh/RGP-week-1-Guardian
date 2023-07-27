@@ -289,6 +289,7 @@ public class UIDialogue : MonoBehaviour
             }
             else
             {
+                m_currentPanel.SpeakerImage.sprite = dialogue.Speaker.GetEmotion(dialogue.Emotion);
                 m_currentPanel.DialogueText.text = dialogue.dialogueLine;
             }
         }

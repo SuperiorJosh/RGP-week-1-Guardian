@@ -92,8 +92,12 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            UIManager.Instance.
+            UIManager.Instance.Cursor.OverrideCursor(Cursors.Rotate);
+        } else if (Input.GetMouseButtonUp(1))
+        {
+            UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
         }
+        
 
         if(Input.GetMouseButtonDown(2))
         {
