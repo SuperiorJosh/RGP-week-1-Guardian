@@ -214,6 +214,16 @@ PrefabInstance:
       objectReference: {fileID: 7063463559275169539}
     - target: {fileID: 4327035432206495279, guid: 5abb4defa7a4af7478a99aea818b2d40,
         type: 3}
+      propertyPath: Bedroom
+      value: 
+      objectReference: {fileID: 1414282935}
+    - target: {fileID: 4327035432206495279, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
+      propertyPath: offset.x
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327035432206495279, guid: 5abb4defa7a4af7478a99aea818b2d40,
+        type: 3}
       propertyPath: BedroomPosition.x
       value: 7
       objectReference: {fileID: 0}
@@ -1484,6 +1494,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af9b43dd49b064d3c86f818a16a8703f, type: 3}
+--- !u!1 &1414282935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 366213119250467185, guid: 8c452f48b5112451a890b2a17a40c588,
+    type: 3}
+  m_PrefabInstance: {fileID: 1299706174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1789681502
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,8 @@ public class GhostInteraction : MonoBehaviour
     [SerializeField] DialogueData MugInteractionDialogue;
 
     // Bedroom position for Emma to flee to
-    [SerializeField] Vector3 BedroomPosition;
+    [SerializeField] GameObject Bedroom;
+    [SerializeField] Vector3 offset;
 
     // On awake
     private void Awake()
@@ -61,8 +62,8 @@ public class GhostInteraction : MonoBehaviour
 
     public void GhostMovement(float _xPosition, float _zPosition)
     {
-        spriteRenderer.DOFade(0f, 1f).OnComplete(() => { spriteRenderer.DOFade(1f, 1f); });
-        gameObject.transform.position = new Vector3(_xPosition, 1f, _zPosition);
+        spriteRenderer.DOFade(0f, 1f).OnComplete(() => { spriteRenderer.DOFade(0.3f, 1f); });
+        gameObject.transform.position = new Vector3(_xPosition, 0f, _zPosition);
     }
 
     private void FleeToBedroom(GameStepEvent _stepEvent)
@@ -70,6 +71,9 @@ public class GhostInteraction : MonoBehaviour
         if(MugInteractionGameStep.CurrentState != GameStepEventState.Completed) return;
 
         // Move emma to bedroom.
-        transform.position = BedroomPosition;
+        GhostMovement(15f, 1f);
+        //transform.InverseTransformVector(BedroomPosition);
+        transform.position = Bedroom.transform.position;
+        transform.position += offset;
     }
 }
