@@ -95,7 +95,7 @@ public class PlayerInput : MonoBehaviour
 
         Ray alwaysRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
             UIManager.Instance.Cursor.OverrideCursor(Cursors.Rotate);
         } else if (Input.GetMouseButtonUp(1))
