@@ -6,6 +6,7 @@ using UnityEngine.Pool;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance { get; private set; }
     private ObjectPool<PooledAudio> m_pool;
 
     private PooledAudio m_musicSource;
@@ -14,6 +15,15 @@ public class AudioManager : MonoBehaviour
     {
         m_pool = new ObjectPool<PooledAudio>(CreatePooledAudioSource, OnGetFromPool, OnReturnedToPool,
             OnDestroyPoolAudioSource);
+        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void OnDestroyPoolAudioSource(PooledAudio obj)
