@@ -46,8 +46,9 @@ public class UIDialogue : MonoBehaviour
         public Image SpeakerImage;
         public TMP_Text DialogueText;
     }
-    
-    public bool IsActive => m_data != null;
+
+    private bool m_active = false;
+    public bool IsActive => m_active;
 
     private Sequence m_currentSequence;
     
@@ -60,6 +61,7 @@ public class UIDialogue : MonoBehaviour
     {
         m_canvasGroup.alpha = 0;
         m_canvasGroup.blocksRaycasts = false;
+        
         m_playerDialogue.DialogueText.text = "";
         m_npcDialogue.DialogueText.text = "";
         m_playerDialogue.DialoguePanel.localScale = new Vector3(0, 0, 0);
@@ -70,6 +72,11 @@ public class UIDialogue : MonoBehaviour
 
     public void ShowDialogue(DialogueData dialogue)
     {
+        if (IsActive)
+        {
+            Debug.LogWarning("Dialogue already active!");
+            return;
+        }
         dialogueIndex = 0;
         m_canvasGroup.blocksRaycasts = true;
         
@@ -88,6 +95,8 @@ public class UIDialogue : MonoBehaviour
         m_npcDialogueCount = m_data.dialogueDataList.Count(dialog => dialog.Speaker != m_playerSpeakerRef && dialog.Speaker != null);
         m_playerDialogueCount = m_data.dialogueDataList.Count(dialog => dialog.Speaker == m_playerSpeakerRef);
 
+        m_active = true;
+        
         if (m_currentSpeaker == m_playerSpeakerRef)
         {
             ShowPlayerDialogue();
@@ -195,6 +204,7 @@ public class UIDialogue : MonoBehaviour
     void Hide()
     {
         // hide the dialogue
+        m_active = false;
         m_currentSequence = DOTween.Sequence();
         m_currentSequence
             .Insert(0f, m_canvasGroup.DOFade(0f, 0.3f))
@@ -208,8 +218,9 @@ public class UIDialogue : MonoBehaviour
         {
             m_canvasGroup.alpha = 0;
             m_canvasGroup.blocksRaycasts = false;
-            m_data = null;
-            DialogueFinished?.Invoke();
+            //m_data = null;
+            dialogueIndex = 0;
+            //DialogueFinished?.Invoke();
             m_npcDialogue.DialogueText.text = "";
             m_playerDialogue.DialogueText.text = "";
             m_currentSequence = null;
@@ -219,9 +230,11 @@ public class UIDialogue : MonoBehaviour
     
     private void ShowNext()
     {
+        if (!m_active) return;
         dialogueIndex++;
-        if (dialogueIndex >= m_data.dialogueDataList.Count)
+        if (dialogueIndex > m_data.dialogueDataList.Count-1)
         {
+            Debug.Log("Hiding dialogue");
             Hide();
         }
         else

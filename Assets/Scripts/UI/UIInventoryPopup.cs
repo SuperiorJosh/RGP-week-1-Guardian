@@ -15,6 +15,7 @@ public class UIInventoryPopup : MonoBehaviour
     public bool Active => m_active;
 
     private UnityAction<UIInventoryIcon> m_onIconClickCallback;
+    private bool m_combineClicked = false;
     
     private void Start()
     {
@@ -28,6 +29,7 @@ public class UIInventoryPopup : MonoBehaviour
     {
         if (!m_active)
         {
+            m_combineClicked = false;
             m_onIconClickCallback = onIconClicked;
             m_activeIcon = icon;
             m_active = true;
@@ -56,13 +58,15 @@ public class UIInventoryPopup : MonoBehaviour
 
     private void OnCombineButtonClicked()
     {
+        if (m_combineClicked) return;
+        m_combineClicked = true;
         var itemOne = m_activeIcon.ItemData;
         var itemTwo = m_combineIcon.ItemData;
         var combined = Inventory.Instance.CombineItems(itemOne, itemTwo);
         if (combined == null) return;
         Debug.Log($"Combined {itemOne.Name} and {itemTwo.Name}");
-        Hide();
         DialogueManager.Instance.ProcessDialogue(combined.dialogueData);
+        Hide();
     }
 
     private void OnUseButtonClicked()
@@ -70,7 +74,14 @@ public class UIInventoryPopup : MonoBehaviour
         Debug.Log($"Used {m_activeIcon.ItemData.Name}");
 
         InteractionManager.Instance.useButtonClicked = true;
+        m_activeIcon.ChangeActiveState(false);
+        if (m_combineIcon)
+        {
+            m_combineIcon.ChangeActiveState(false);
+        }
+
         //InteractionManager.Instance.clickedItemData = m_activeIcon.ItemData;
+        Hide();
     }
 
     public void SetNewTarget(UIInventoryIcon icon)
