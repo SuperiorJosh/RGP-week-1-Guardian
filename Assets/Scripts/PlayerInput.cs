@@ -97,20 +97,20 @@ public class PlayerInput : MonoBehaviour
         
         if (Input.GetMouseButton(1))
         {
-            UIManager.Instance.Cursor.OverrideCursor(Cursors.Rotate);
+            //UIManager.Instance.Cursor.OverrideCursor(Cursors.Rotate);
         } else if (Input.GetMouseButtonUp(1))
         {
-            UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
+            //UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
         } else 
         if (Physics.Raycast(alwaysRay, out RaycastHit hit2))
         {
             if (hit2.collider.GetComponentInParent<Interactable>())
             {
-                UIManager.Instance.Cursor.OverrideCursor(Cursors.Speak);
+                //UIManager.Instance.Cursor.OverrideCursor(Cursors.Speak);
             }
             else
             {
-                UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
+                //UIManager.Instance.Cursor.OverrideCursor(Cursors.Default);
             }
         }
         
