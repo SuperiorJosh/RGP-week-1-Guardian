@@ -22,6 +22,7 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] private Transform m_panTarget;
     private Vector3 m_panTargetLastPos;
+    [SerializeField] private float m_panSpeed = 1.0f;
 
     private float m_currentZoomDistance;
     private float m_targetZoomDistance;
@@ -98,6 +99,7 @@ public class PlayerInput : MonoBehaviour
         if(Input.GetMouseButton(2))
         {
             Vector3 mouseDelta = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_panTargetLastPos;
+            mouseDelta *= m_panSpeed;
             m_panTarget.Translate(mouseDelta.x, 0, mouseDelta.z);
             m_panTargetLastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
